@@ -1,0 +1,153 @@
+These are all the emotions that our model is capable to classify.
+
+Bold: Feeling confident and courageous, willing to take risks or stand up for oneself or others.
+Useful: Feeling productive and capable of contributing value to oneself or others.
+Mighty: Feeling strong, powerful, and capable of achieving great things.
+Kind: Feeling empathetic and compassionate towards oneself or others.
+Self-satisfied: Feeling content and pleased with oneself or one's accomplishments.
+Admired: Feeling respected and looked up to by others.
+Proud: Feeling a sense of accomplishment or satisfaction in one's achievements or qualities.
+Interested: Feeling curious or engaged in a particular subject or activity.
+Arrogant: Feeling superior or entitled, with a disregard for the opinions or feelings of others.
+Inspired: Feeling motivated or creatively stimulated by something or someone.
+Excited: Feeling enthusiastic or eager about a particular event or experience.
+Influential: Feeling empowered to have an impact or effect on others or the world.
+Aggressive: Feeling confrontational or forceful, often with a desire to dominate or control others.
+Strong: Feeling physically or mentally capable and resilient.
+Dignified: Feeling dignified means feeling self-respect, pride, and confidence in oneself or one's actions.
+Powerful: Feeling influential and capable of having a significant impact on oneself or others.
+Elated: Feeling extremely happy and joyful.
+Hopeful: Feeling optimistic about the future or a particular outcome.
+Triumphant: Feeling victorious or successful, often after overcoming a difficult challenge or obstacle.
+Joyful: Feeling a deep sense of happiness and delight.
+Capable: Feeling competent and confident in one's abilities to accomplish tasks or overcome challenges.
+Lucky: Feeling fortunate or blessed, often due to external circumstances or events.
+Responsible: Feeling accountable for one's actions or duties.
+Friendly: Feeling amicable and sociable towards others.
+Masterful: Feeling skilled and in control in a particular area or task.
+Free: Feeling liberated from constraints or limitations, often associated with independence or autonomy.
+Devoted: Feeling dedicated and committed to someone or something.
+Domineering: Feeling a desire to control or dominate others.
+Aroused: Feeling sexually excited or stimulated.
+Concentrating: Feeling focused and absorbed in a particular task or activity.
+Happy: Feeling a general sense of contentment and well-being.
+Egotistical: Feeling excessively focused on oneself and one's own needs or desires.
+Carefree: Feeling relaxed and unconcerned, often associated with a lack of worry or responsibility.
+Affectionate: Feeling fondness and warmth towards someone or something.
+Vigorous: Feeling energetic and active.
+Activated: Feeling stimulated or mobilized to take action.
+Alert: Feeling aware and attentive to one's surroundings and potential dangers or opportunities.
+Alone with responsibility: Feeling burdened or overwhelmed by responsibilities that must be handled alone.
+Controlling: Feeling a desire to exert control or influence over others or situations.
+Proud and lonely: Feeling proud but isolated or alone in one's accomplishments or abilities.
+Enjoyment: Feeling pleasure and enjoyment from a particular activity or experience.
+Serious: Feeling focused and determined, often associated with a lack of humor or lightheartedness.
+Cooperative: Feeling collaborative and willing to work with others towards a common goal.
+Thankful: Feeling grateful and appreciative for something or someone.
+Respectful: Feeling admiration and reverence towards someone or something.
+Appreciative: Feeling thankful and grateful for something or someone.
+Loved: Feeling affection and attachment from someone or something.
+Grateful: Feeling thankful and appreciative for something or someone.
+In love: Feeling deeply affection
+Anxious: Feeling worried or uneasy about a situation or outcome.
+Impressed: Feeling impressed or awed by something or someone.
+Surprised: Feeling caught off guard or shocked by something unexpected.
+Sexually excited: Feeling aroused or stimulated in a sexual manner.
+Wonder: Feeling amazement or awe at something or someone.
+Fascinated: Feeling captivated or intrigued by something or someone.
+Awed: Feeling a sense of reverence or admiration for something or someone.
+Overwhelmed: Feeling overcome or inundated by something, often associated with a sense of helplessness or exhaustion.
+Curious: Feeling a desire to explore or discover something new or unknown.
+Relaxed: Feeling calm and at ease, often associated with a lack of stress or tension.
+Untroubled: Feeling free from worry or anxiety.
+Modest: Feeling humble and unassuming, often associated with a lack of pride or arrogance.
+Secure: Feeling safe and protected, often associated with a sense of stability or predictability.
+Nonchalant: Feeling unconcerned or indifferent towards something, often associated with a lack of emotion or interest.
+Aloof: Feeling distant or unapproachable, often associated with a lack of social skills or interest in others.
+Leisurely: Feeling relaxed and unhurried, often associated with a lack of urgency or stress.
+Reserved: Feeling reserved or cautious in social situations, often associated with a lack of confidence or shyness.
+Protected: Feeling safe and secure, often due to external circumstances or factors.
+Consoled: Feeling comforted or reassured in a time of distress or sadness.
+Quiet: Feeling peaceful and calm, often associated with a lack of noise or disturbance.
+Sheltered: Feeling protected and sheltered from external dangers or threats.
+Humble: Feeling modest and unassuming, often associated with a lack of pride or arrogance.
+Solemn: Feeling serious or solemn, often associated with a sense of reverence or gravity.
+Reverent: Feeling respect and awe towards something or someone, often associated with religious or spiritual contexts.
+Astonished: Feeling amazed or shocked by something unexpected or surprising.
+Disgusted: Feeling revulsion or disgust towards something or someone.
+Insolent: Feeling disrespectful or contemptuous towards someone in authority or with a perceived lower status.
+Cruel: Feeling a desire to inflict harm or pain on others or animals.
+Irritated: Feeling annoyed or bothered by something or someone.
+Defiant: Feeling rebellious or resistant towards authority or expectations.
+Hate: Feeling intense dislike or animosity towards something or someone.
+Hostile: Feeling aggressive or unfriendly towards something or someone.
+Angry: Feeling a strong, negative emotion often associated with frustration or injustice.
+Mildly annoyed: Feeling slightly bothered or irritated by something.
+Enraged: Feeling extremely angry or furious.
+Contempt: Feeling disdain or scorn towards something or someone.
+Selfish: Feeling focused on oneself and one's own needs or desires, often associated with a lack of consideration for others.
+Reprehensible: Feeling disapproval or condemnation towards something or someone, often associated with a moral judgment.
+Contemptuous: Feeling contempt or disdain towards something or someone.
+Scornful: Feeling disdain or contempt towards something or someone.
+Suspicious: Feeling distrustful or wary of something or someone.
+Skeptical: Feeling doubtful or questioning towards something or someone.
+Burdened with responsibility: Feeling overwhelmed or burdened by responsibilities or obligations.
+Cold anger: Feeling anger that is controlled or contained, often associated with a lack of outward expression of emotion.
+Hostile but controlled: Feeling hostile or unfriendly towards something or someone
+Crushed: Feeling defeated or overwhelmed by a difficult situation or circumstance.
+Frustrated: Feeling annoyed or dissatisfied with a situation or outcome.
+Distressed: Feeling upset or troubled by a situation or circumstance.
+Insecure: Feeling uncertain or lacking in confidence, often associated with a fear of rejection or failure.
+Humiliated: Feeling embarrassed or ashamed by a situation or circumstance.
+Hungry: Feeling a physical desire or need for food.
+Fearful: Feeling afraid or anxious about a situation or outcome.
+Terrified: Feeling extreme fear or terror, often associated with a perceived threat or danger.
+Embattled: Feeling engaged in a difficult or challenging situation or conflict.
+Helpless: Feeling unable to take action or effect change in a situation, often associated with a sense of powerlessness.
+Troubled: Feeling worried or concerned about a situation or outcome.
+Startled: Feeling surprised or frightened by a sudden event or noise.
+Anguished: Feeling extreme emotional or physical pain, often associated with grief or loss.
+Shamed: Feeling embarrassed or ashamed by one's actions or behavior.
+Displeased: Feeling unhappy or dissatisfied with a situation or outcome.
+Embarrassed: Feeling self-conscious or awkward in a social situation.
+Upset: Feeling emotionally disturbed or agitated.
+Defeated: Feeling overwhelmed or beaten by a situation or circumstance.
+Pain: Feeling physical or emotional pain or discomfort.
+Quietly indignant: Feeling anger or resentment towards a situation or outcome, often expressed in a subdued or restrained manner.
+Repentant: Feeling remorseful or regretful for one's actions or behavior.
+Sinful: Feeling guilty or ashamed for violating a moral or religious code.
+Shy: Feeling nervous or self-conscious in social situations.
+Guilty: Feeling responsible or culpable for something wrong or harmful.
+Weary with responsibility: Feeling tired or exhausted from a heavy burden of responsibility or obligation.
+Angry but detached: Feeling angry or frustrated, but expressing it in a detached or aloof manner.
+Confused: Feeling uncertain or bewildered about a situation or outcome.
+Dissatisfied: Feeling unhappy or unfulfilled with a situation or outcome.
+Regretful: Feeling remorseful or sad about a past action or decision.
+Tense: Feeling nervous or anxious, often associated with a sense of tightness or pressure in the body.
+Disdainful: Feeling contemptuous or dismissive towards something or someone.
+Depressed: Feeling sad or despondent, often associated with a lack of motivation or interest.
+Despairing: Feeling hopeless or discouraged, often associated with a sense of helplessness or resignation.
+Lonely: Feeling isolated or disconnected from others.
+Meek: Feeling submissive or compliant, often associated with a lack of assertiveness or confidence.
+Burdened: Feeling weighed down or overwhelmed by a difficult situation or circumstance.
+Timid: Feeling shy or lacking in confidence, often associated with a fear of rejection or failure.
+Bored: Feeling uninterested or disengaged from a situation or activity.
+Feeble: Feeling weak or frail, often associated with physical or mental decline.
+Nauseated: Feeling sick or queasy, often associated with a physical illness or discomfort.
+Inhibited: Feeling restrained or constrained in expressing oneself or taking action.
+Fatigued: Feeling tired or exhausted, often associated with physical or mental exertion.
+Rejected: Feeling excluded or unwanted by others.
+Subdued: Feeling subdued or restrained in expressing oneself, often associated with a lack of energy or enthusiasm.
+Impotent: Feeling powerless or unable to effect change in a situation or circumstance.
+Ennui: Feeling a sense of boredom or dissatisfaction with life, often associated with a lack of purpose or direction.
+Blase: Feeling uninterested or unconcerned about something, often associated with a sense of boredom or ennui.
+Haughty and lonely: Feeling arrogant or superior to others, but also feeling isolated or disconnected from them.
+Listless: Feeling lethargic or lacking in energy or enthusiasm.
+Deactivated: Feeling inactive or unproductive, often associated with a lack of motivation or purpose.
+Weary: Feeling tired or exhausted, often associated with a sense of mental or emotional fatigue.
+Snobbish and lonely: Feeling snobbish or elitist towards others, but also feeling isolated or disconnected from them.
+Uninterested: Feeling disinterested or apathetic towards something or someone.
+Detached: Feeling emotionally or socially detached from others, often associated with a lack of empathy or concern.
+Discontented: Feeling unhappy or dissatisfied with a situation or circumstance.
+Discouraged: Feeling discouraged or disheartened, often associated with a lack of motivation or hope.
+Sad: Feeling unhappy or sorrowful, often associated with a sense of loss or disappointment.
