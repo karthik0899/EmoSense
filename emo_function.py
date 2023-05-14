@@ -26,6 +26,7 @@ import warnings
 # Ignore all warnings
 warnings.filterwarnings("ignore")
 
+#-------------------------------------------------------------------Data Information ---------------------------------------------------------------------------------
 
 
 def INFO(df):
@@ -70,6 +71,7 @@ def INFO(df):
     return col_info_df
 
   
+#-------------------------------------------------------------------Emotion plotting ---------------------------------------------------------------------------------
 
 
 def classify_emotions(v_valence, v_arousal, v_dominance):
@@ -120,7 +122,8 @@ def classify_emotions(v_valence, v_arousal, v_dominance):
     for i, emotion in enumerate(top5_emotions):
         print(emotion, ":", intensities[i], "%")
 
-    
+  #-------------------------------------------------------------------Data rescaling ---------------------------------------------------------------------------------
+
     
 def range_scaler(array, assumed_max_input=5, assumed_min_input=1):
     """
@@ -139,6 +142,7 @@ def range_scaler(array, assumed_max_input=5, assumed_min_input=1):
     return array_scaled
 
 
+#-------------------------------------------------------------------Data Preprocessing ---------------------------------------------------------------------------------
 
 
 def preprocess_dataframe(df):
@@ -168,10 +172,12 @@ def preprocess_dataframe(df):
 
     # Add special character count column to the DataFrame
     df['special_chars_count'] = df['text'].apply(lambda x: len(re.findall(r'[^\w\s]', x)))
+    df = df.reset_index(drop = True)
     
     return df
 
 
+#-------------------------------------------------------------------Data EDA & Analysis ---------------------------------------------------------------------------------
 
 
 
