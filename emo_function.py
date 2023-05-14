@@ -494,10 +494,10 @@ def plot_top_words_and_special_chars(df, num_words=30, num_chars=30):
 
     # Remove stopwords from text data
     stop_words = set(stopwords.words('english'))
-    df['text'] = df['text'].apply(lambda x: ' '.join([word for word in x.split() if word not in stop_words]))
+    df['text'] = df['text'].apply(lambda x: ' '.join([word for word in x.split() if word.lower() not in stop_words]))
 
     # Plot the top most occurring words and their frequencies
-    top_words = df['text'].str.lower().str.findall(r'\b[a-z]+\b').explode().value_counts()[:num_words]
+    top_words = df['text'].str.split(expand=True).stack().value_counts()[:num_words]
     plt.figure(figsize=(15, 8))
     sns.barplot(x=top_words.index, y=top_words.values, alpha=0.8)
     plt.title('Top {} Most Occurring Words'.format(num_words))
@@ -512,7 +512,6 @@ def plot_top_words_and_special_chars(df, num_words=30, num_chars=30):
     plt.title('Top {} Most Occurring Special Characters'.format(num_chars))
     plt.ylabel('Frequency', fontsize=12)
     plt.xlabel('Special Characters', fontsize=12)
-    
     return plt.show()
 
 
