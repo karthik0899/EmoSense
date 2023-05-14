@@ -191,15 +191,15 @@ def plot_emotion_distributions(df):
     
     fig, axs = plt.subplots(nrows=1, ncols=3, figsize=(18,6))
     
-    sns.displot(df['V'], ax=axs[0], color='red')
+    sns.distplot(df['V'], ax=axs[0], color='red')
     axs[0].set_xlabel('Valence')
     axs[0].set_ylabel('Density')
     
-    sns.displot(df['A'], ax=axs[1], color='green')
+    sns.distplot(df['A'], ax=axs[1], color='green')
     axs[1].set_xlabel('Arousal')
     axs[1].set_ylabel('Density')
     
-    sns.displot(df['D'], ax=axs[2], color='blue')
+    sns.distplot(df['D'], ax=axs[2], color='blue')
     axs[2].set_xlabel('Dominance')
     axs[2].set_ylabel('Density')
     
