@@ -172,6 +172,7 @@ def preprocess_dataframe(df):
 
     # Add special character count column to the DataFrame
     df['special_chars_count'] = df['text'].apply(lambda x: len(re.findall(r'[^\w\s]', x)))
+    df = df[~((df["V"] == 3.0) & (df["A"] == 3.0) & (df["D"] == 3.0))]
     df = df.reset_index(drop = True)
     
     return df
