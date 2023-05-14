@@ -314,7 +314,7 @@ def plot_vad_scatter(df):
         raise ValueError("No column 'D' or 'D_MEAN' found in the DataFrame.")
     
     plt.figure(figsize=(15,6))
-    sns.scatterplot(x=x_column, y=y_column, hue=hue_column, data=df)  
+    sns.scatterplot(x=x_column, y=y_column, hue=hue_column, data=df,palette=["green", "yellow", "red"])  
     plt.title("Scatter Plot of VAD Values")
     plt.xlabel("Valence (V)")
     plt.ylabel("Arousal (A)")
