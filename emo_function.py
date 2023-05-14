@@ -187,7 +187,7 @@ def plot_vad_scatter(df):
 
 
 
-def plot_emotion_distributions(preprocessed_df):
+def plot_emotion_distributions(df):
     
     fig, axs = plt.subplots(nrows=1, ncols=3, figsize=(18,6))
     
