@@ -427,8 +427,7 @@ def plot_VAD_pairplot(df):
     else:
         raise ValueError("No column 'D' or 'D_MEAN' found in the DataFrame.")
     
-    sns.pairplot(df, vars=[v_column, a_column, d_column], height=4,title = "Pairplot of VAD Values")
-    plt.suptitle('Pairplot of VDA values')
+    sns.pairplot(df, vars=[v_column, a_column, d_column], height=4)
 
     return plt.show()
 
