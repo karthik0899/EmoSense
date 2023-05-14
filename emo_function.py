@@ -20,9 +20,21 @@ plt.style.use("cyberpunk")
 import nltk
 nltk.download('punkt')
 
+
+
 def INFO(df):
-    import numpy as np # linear algebra
-    import pandas as pd # data processing, CSV file I/O (e.g. pd.read_csv)
+    """
+    Generates an information table summarizing the columns in a DataFrame.
+
+    Parameters:
+        df (pandas.DataFrame): DataFrame to generate information table for.
+
+    Returns:
+        pandas.DataFrame: Information table summarizing the columns of the DataFrame.
+    """
+
+    import numpy as np  # linear algebra
+    import pandas as pd  # data processing, CSV file I/O (e.g. pd.read_csv)
     info = []
 
     for col in df.columns:
@@ -31,25 +43,26 @@ def INFO(df):
         percent = (NAN_values / count_rows) * 100
         data_type = type(df[col][0])
         col_type = df[col].dtype
-        if col_type not in [int,float]:
+        if col_type not in [int, float]:
             column_type = "Categorical"
             Max = "Not Applicable"
             Min = "Not Applicable"
         else:
-            column_type = "Numirical"
+            column_type = "Numerical"
             Max = max(df[col])
             Min = min(df[col])
         try:
-            n_uniques =df[col].nunique()
-            ratio = count_rows/n_uniques
+            n_uniques = df[col].nunique()
+            ratio = count_rows / n_uniques
         except:
             n_uniques = "Not Applicable"
             ratio = "Not Applicable"
-        info.append([col,data_type,column_type, count_rows, NAN_values, percent,n_uniques,ratio,Max, Min])
+        info.append([col, data_type, column_type, count_rows, NAN_values, percent, n_uniques, ratio, Max, Min])
 
-    col_info_df = pd.DataFrame(info, columns=['Column','Data Type','Column Type', 'count_rows', 'Missing', 'Percent Missing','Number of Uniques','Ratio of uniqus','Max','Min'])
+    col_info_df = pd.DataFrame(info, columns=['Column', 'Data Type', 'Column Type', 'count_rows', 'Missing', 'Percent Missing', 'Number of Uniques', 'Ratio of Uniques', 'Max', 'Min'])
 
     return col_info_df
+
   
 
 
@@ -101,7 +114,8 @@ def classify_emotions(v_valence, v_arousal, v_dominance):
     for i, emotion in enumerate(top5_emotions):
         print(emotion, ":", intensities[i], "%")
 
-        
+    
+    
 def range_scaler(array, assumed_max_input=5, assumed_min_input=1):
     """
     Scale the values in the input array to the range of -1 to 1.
@@ -117,16 +131,30 @@ def range_scaler(array, assumed_max_input=5, assumed_min_input=1):
     array_std = (array - assumed_min_input) / (assumed_max_input - assumed_min_input)
     array_scaled = array_std * (1 - (-1)) + (-1)
     return array_scaled
+
+
+
+
 def preprocess_dataframe(df):
     
-    df = df[df['text'].str.split().apply(len) >= 4].copy() # Drop rows with less than 4 words
-    
+    """
+    Preprocesses a DataFrame by performing various data cleaning and filtering operations.
+
+    Parameters:
+        df (pandas.DataFrame): DataFrame containing a column named 'text' representing the text data.
+
+    Returns:
+        pandas.DataFrame: Preprocessed DataFrame.
+    """
+
+    df = df[df['text'].str.split().apply(len) >= 4].copy()  # Drop rows with less than 4 words
+
     # Convert all words to lowercase and remove HTML tags
     df['text'] = df['text'].str.lower().str.replace('<br /><br />', ' ')
-    
+
     # Replace multiple spaces with a single space
     df['text'] = df['text'].str.replace('\s+', ' ', regex=True)
-    
+
     # Drop rows with only numerical values
     df = df[~df['text'].str.isnumeric()].copy()
     
@@ -134,8 +162,19 @@ def preprocess_dataframe(df):
 
 
 
+
+
 def plot_VAD_histograms(df):
-    
+    """
+    Plots histograms of Valence, Arousal, and Dominance values in a DataFrame.
+
+    Parameters:
+        df (pandas.DataFrame): DataFrame containing columns 'V', 'A', and 'D' representing Valence, Arousal, and Dominance, respectively.
+
+    Returns:
+        None
+    """
+
     fig, axs = plt.subplots(1, 3, figsize=(15, 6))
     axs[0].hist(df['V'], color='red')
     axs[0].set_xlabel('Valence')
@@ -148,6 +187,7 @@ def plot_VAD_histograms(df):
     
     
     return plt.show()
+
 
 
 
@@ -170,6 +210,7 @@ def plot_VAD_boxplot(data):
 
 
 
+
 def plot_vad_scatter(df):
     
     plt.figure(figsize=(15,6))
@@ -180,43 +221,65 @@ def plot_vad_scatter(df):
     
     plt.legend(title="Dominance (D)", loc='best', labels=['Low', 'Medium', 'High'])
     
-    plt.show()
     return plt.show()
 
     
 
-
-
 def plot_emotion_distributions(df):
-    
-    fig, axs = plt.subplots(nrows=1, ncols=3, figsize=(18,6))
-    
+    """
+    Plots the distribution of Valence, Arousal, and Dominance in a DataFrame.
+
+    Parameters:
+        df (pandas.DataFrame): DataFrame containing columns 'V', 'A', and 'D' representing Valence, Arousal, and Dominance, respectively.
+
+    Returns:
+        None
+    """
+
+    fig, axs = plt.subplots(nrows=1, ncols=3, figsize=(18, 6))
+
     sns.distplot(df['V'], ax=axs[0], color='red')
     axs[0].set_xlabel('Valence')
     axs[0].set_ylabel('Density')
-    
+
     sns.distplot(df['A'], ax=axs[1], color='green')
     axs[1].set_xlabel('Arousal')
     axs[1].set_ylabel('Density')
-    
+
     sns.distplot(df['D'], ax=axs[2], color='blue')
     axs[2].set_xlabel('Dominance')
     axs[2].set_ylabel('Density')
-    
-    plt.show()
+
     return plt.show()
 
     
-
     
 def plot_VAD_pairplot(df):
-    
-    sns.pairplot(df, vars=['V', 'A', 'D'],height = 4)
+    """
+    Plots a pair plot of Valence, Arousal, and Dominance in a DataFrame.
+
+    Parameters:
+        df (pandas.DataFrame): DataFrame containing columns 'V', 'A', and 'D' representing Valence, Arousal, and Dominance, respectively.
+
+    Returns:
+        None
+    """
+
+    sns.pairplot(df, vars=['V', 'A', 'D'], height=4)
     return plt.show()
 
 
     
 def create_heatmap(df):
+    """
+    Creates a correlation heatmap between the features in a DataFrame.
+
+    Parameters:
+        df (pandas.DataFrame): DataFrame containing columns 'V', 'A', 'D', 'text'.
+
+    Returns:
+        None
+    """
 
     df['word_counts'] = df['text'].apply(lambda x: len(x.split()))     # Add word count column to the DataFrame
 
@@ -235,14 +298,26 @@ def create_heatmap(df):
     # Set the title
     ax.set_title('Correlation Heat Map between the Features')
 
-    return plt.show()
+    return plt.show(
 
 
 
 def plot_top_words_and_special_chars(df, num_words=30, num_chars=30):
+    """
+    Plots the top most occurring words and special characters and their frequencies in a DataFrame.
+
+    Parameters:
+        df (pandas.DataFrame): DataFrame containing a column named 'text' representing the text data.
+        num_words (int): Number of top words to plot (default: 30).
+        num_chars (int): Number of top special characters to plot (default: 30).
+
+    Returns:
+        None
+    """
+
     # Plot the top most occurring words and their frequencies
     top_words = df['text'].str.split(expand=True).stack().value_counts()[:num_words]
-    plt.figure(figsize=(15,8))
+    plt.figure(figsize=(15, 8))
     sns.barplot(x=top_words.index, y=top_words.values, alpha=0.8)
     plt.title('Top {} Most Occurring Words'.format(num_words))
     plt.ylabel('Frequency', fontsize=12)
@@ -251,19 +326,27 @@ def plot_top_words_and_special_chars(df, num_words=30, num_chars=30):
 
     # Plot the top most occurring special characters and their frequencies
     top_special_chars = df['text'].str.findall(r'[^\w\s]').explode().value_counts()[:num_chars]
-    plt.figure(figsize=(15,8))
+    plt.figure(figsize=(15, 8))
     sns.barplot(x=top_special_chars.index, y=top_special_chars.values, alpha=0.8)
     plt.title('Top {} Most Occurring Special Characters'.format(num_chars))
     plt.ylabel('Frequency', fontsize=12)
     plt.xlabel('Special Characters', fontsize=12)
-
     return plt.show()
 
 
 
 def plot_VAD_vs_special_chars_scatter(df):
-    
-    fig, axs = plt.subplots(nrows=1, ncols=3, figsize=(15,6))
+    """
+    Plots scatter plots of Valence, Arousal, and Dominance against the count of special characters in a DataFrame.
+
+    Parameters:
+        df (pandas.DataFrame): DataFrame containing columns 'special_chars_count', 'V', 'A', and 'D' representing the count of special characters, Valence, Arousal, and Dominance, respectively.
+
+    Returns:
+        None
+    """
+
+    fig, axs = plt.subplots(nrows=1, ncols=3, figsize=(15, 6))
 
     axs[0].scatter(df['special_chars_count'], df['V'], color='red', label='Valence')
     axs[0].set_xlabel('Count of Special Characters')
@@ -280,14 +363,22 @@ def plot_VAD_vs_special_chars_scatter(df):
     axs[2].set_ylabel('Dominance')
     axs[2].legend()
 
-    plt.show()
     return plt.show()
 
 
     
 def plot_VAD_vs_WordCounts(df):
+    """
+    Plots scatter plots of Valence, Arousal, and Dominance against word counts in a DataFrame.
 
-    fig, axs = plt.subplots(nrows=1, ncols=3, figsize=(15,6))
+    Parameters:
+        df (pandas.DataFrame): DataFrame containing columns 'word_counts', 'V', 'A', and 'D' representing word counts, Valence, Arousal, and Dominance, respectively.
+
+    Returns:
+        None
+    """
+
+    fig, axs = plt.subplots(nrows=1, ncols=3, figsize=(15, 6))
 
     axs[0].scatter(df['word_counts'], df['V'], color='red', label='Valence')
     axs[0].set_xlabel('Word Counts')
@@ -304,20 +395,29 @@ def plot_VAD_vs_WordCounts(df):
     axs[2].set_ylabel('Dominance')
     axs[2].legend()
 
-    plt.show()
+
     return plt.show()
 
 
     
 def plot_word_counts_frequencies(df):
-    
-    plt.figure(figsize=(15,6))
+    """
+    Plots the histogram of word counts frequencies in a DataFrame.
+
+    Parameters:
+        df (pandas.DataFrame): DataFrame containing a column named 'word_counts' representing the word counts.
+
+    Returns:
+        None
+    """
+
+    plt.figure(figsize=(15, 6))
     sns.histplot(df['word_counts'], kde=False)
     plt.title("Word Counts Vs Frequency")
     plt.xlabel("Word Counts")
     plt.ylabel("Frequency")
     plt.show()
-    return plt.show()
+
 
     
 
