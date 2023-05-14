@@ -1,4 +1,3 @@
-pip install mplcyberpunk
 import re
 import pickle
 
