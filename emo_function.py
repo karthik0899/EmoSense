@@ -18,6 +18,8 @@ import mplcyberpunk as mlp
 plt.style.use("cyberpunk")
 
 import nltk
+from nltk.corpus import stopwords
+nltk.download('stopwords')
 nltk.download('punkt')
 
 import warnings
