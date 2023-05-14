@@ -1,1 +1,1 @@
-mplcyberpunk
+mplcyberpunk == 0.7.0
