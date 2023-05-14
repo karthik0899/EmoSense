@@ -275,7 +275,7 @@ def plot_vad_scatter(df):
     Returns:
         None
     """
-   x_column = None
+    x_column = None
     y_column = None
     hue_column = None
     
