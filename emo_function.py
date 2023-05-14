@@ -292,36 +292,46 @@ def plot_vad_scatter(df):
     x_column = None
     y_column = None
     hue_column = None
-    
+
     if 'V' in df.columns:
         x_column = 'V'
     elif 'V_MEAN' in df.columns:
         x_column = 'V_MEAN'
     else:
         raise ValueError("No column 'V' or 'V_MEAN' found in the DataFrame.")
-    
+
     if 'A' in df.columns:
         y_column = 'A'
     elif 'A_MEAN' in df.columns:
         y_column = 'A_MEAN'
     else:
         raise ValueError("No column 'A' or 'A_MEAN' found in the DataFrame.")
-    
+
     if 'D' in df.columns:
-        hue_column = 'D'
+        df['Dominance_Category'] = np.where(df['D'] < 3.0, 'Low',
+                                            np.where(df['D'] == 3.0, 'Medium', 'High'))
+        hue_column = 'Dominance_Category'
     elif 'D_MEAN' in df.columns:
-        hue_column = 'D_MEAN'
+        df['Dominance_Category'] = np.where(df['D_MEAN'] < 3.0, 'Low',
+                                            np.where(df['D_MEAN'] == 3.0, 'Medium', 'High'))
+        hue_column = 'Dominance_Category'
     else:
         raise ValueError("No column 'D' or 'D_MEAN' found in the DataFrame.")
-    
-    plt.figure(figsize=(15,6))
-    sns.scatterplot(x=x_column, y=y_column, hue=hue_column, data=df,palette=["green", "yellow", "red"])  
+
+    plt.figure(figsize=(15, 6))
+    scatterplot = sns.scatterplot(x=x_column, y=y_column, hue=hue_column, palette=["green", "yellow", "red"], data=df)
     plt.title("Scatter Plot of VAD Values")
     plt.xlabel("Valence (V)")
     plt.ylabel("Arousal (A)")
 
-    plt.legend(title="Dominance (D)", loc='best', labels=['Low', 'Medium', 'High'])
-    
+    # Custom legend with bucketed values
+    legend_elements = [
+        plt.Line2D([0], [0], marker='o', color='w', markerfacecolor='green', markersize=8, label='Low (D < 3.0)'),
+        plt.Line2D([0], [0], marker='o', color='w', markerfacecolor='yellow', markersize=8, label='Medium (D = 3.0)'),
+        plt.Line2D([0], [0], marker='o', color='w', markerfacecolor='red', markersize=8, label='High (D > 3.0)')
+    ]
+    scatterplot.legend(handles=legend_elements, title='Dominance (D)', loc='best')
+
     return plt.show()
 
     
