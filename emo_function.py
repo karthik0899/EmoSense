@@ -482,15 +482,17 @@ def create_heatmap(df):
 def plot_top_words_and_special_chars(df, num_words=30, num_chars=30):
     """
     Plots the top most occurring words and special characters and their frequencies in a DataFrame.
-
     Parameters:
         df (pandas.DataFrame): DataFrame containing a column named 'text' representing the text data.
         num_words (int): Number of top words to plot (default: 30).
         num_chars (int): Number of top special characters to plot (default: 30).
-
     Returns:
         None
     """
+
+    # Remove stopwords from text data
+    stop_words = set(stopwords.words('english'))
+    df['text'] = df['text'].apply(lambda x: ' '.join([word for word in x.split() if word.lower() not in stop_words]))
 
     # Plot the top most occurring words and their frequencies
     top_words = df['text'].str.split(expand=True).stack().value_counts()[:num_words]
@@ -609,10 +611,11 @@ def plot_word_cloud(data_frame, column_name, width=1500, height=1000, max_words=
     width (int, optional): Width of the word cloud plot. Default is 1500.
     height (int, optional): Height of the word cloud plot. Default is 1000.
     max_words (int, optional): Maximum number of words to include in the word cloud plot. Default is 200.
+    max_word_lenght will be 3
     """
 
     text = ' '.join(data_frame[column_name])
-    wordcloud = WordCloud(width=width, height=height, background_color='white', max_words=max_words).generate(text)
+    wordcloud = WordCloud(width=width, height=height, background_color='white', max_words=max_words,min_word_length = 3).generate(text)
     plt.figure(figsize=(12,6), facecolor=None)
     plt.imshow(wordcloud)
     plt.axis("off")
