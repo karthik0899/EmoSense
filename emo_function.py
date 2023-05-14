@@ -20,6 +20,10 @@ plt.style.use("cyberpunk")
 import nltk
 nltk.download('punkt')
 
+import warnings
+# Ignore all warnings
+warnings.filterwarnings("ignore")
+
 
 
 def INFO(df):
