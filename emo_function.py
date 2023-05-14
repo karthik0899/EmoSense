@@ -162,6 +162,11 @@ def preprocess_dataframe(df):
     # Drop rows with only numerical values
     df = df[~df['text'].str.isnumeric()].copy()
     
+    df['word_counts'] = df['text'].apply(lambda x: len(x.split()))
+
+    # Add special character count column to the DataFrame
+    df['special_chars_count'] = df['text'].apply(lambda x: len(re.findall(r'[^\w\s]', x)))
+    
     return df
 
 
@@ -403,7 +408,7 @@ def plot_VAD_pairplot(df):
         raise ValueError("No column 'D' or 'D_MEAN' found in the DataFrame.")
     
     sns.pairplot(df, vars=[v_column, a_column, d_column], height=4)
-    plt.show()
+    return plt.show()
 
 
     
@@ -447,11 +452,11 @@ def create_heatmap(df):
     modified_df = df.copy()
 
     if 'text' in df.columns:
-        # Add word count column to the DataFrame
-        modified_df['word_counts'] = modified_df['text'].apply(lambda x: len(x.split()))
+#         # Add word count column to the DataFrame
+#         modified_df['word_counts'] = modified_df['text'].apply(lambda x: len(x.split()))
 
-        # Add special character count column to the DataFrame
-        modified_df['special_chars_count'] = modified_df['text'].apply(lambda x: len(re.findall(r'[^\w\s]', x)))
+#         # Add special character count column to the DataFrame
+#         modified_df['special_chars_count'] = modified_df['text'].apply(lambda x: len(re.findall(r'[^\w\s]', x)))
 
         # Select the columns to include in the correlation matrix
         
