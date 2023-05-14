@@ -302,7 +302,7 @@ def create_heatmap(df):
     # Set the title
     ax.set_title('Correlation Heat Map between the Features')
 
-    return plt.show(
+    return plt.show()
 
 
 
