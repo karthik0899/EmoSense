@@ -178,14 +178,39 @@ def plot_VAD_histograms(df):
     Returns:
         None
     """
-
+    
+    v_column = None
+    a_column = None
+    d_column = None
+    
+    if 'V' in df.columns:
+        v_column = 'V'
+    elif 'V_MEAN' in df.columns:
+        v_column = 'V_MEAN'
+    else:
+        raise ValueError("No column 'V' or 'V_MEAN' found in the DataFrame.")
+    
+    if 'A' in df.columns:
+        a_column = 'A'
+    elif 'A_MEAN' in df.columns:
+        a_column = 'A_MEAN'
+    else:
+        raise ValueError("No column 'A' or 'A_MEAN' found in the DataFrame.")
+    
+    if 'D' in df.columns:
+        d_column = 'D'
+    elif 'D_MEAN' in df.columns:
+        d_column = 'D_MEAN'
+    else:
+        raise ValueError("No column 'D' or 'D_MEAN' found in the DataFrame.")
+    
     fig, axs = plt.subplots(1, 3, figsize=(15, 6))
-    axs[0].hist(df['V'], color='red')
+    axs[0].hist(df[v_column], color='red')
     axs[0].set_xlabel('Valence')
     axs[0].set_ylabel('Frequency')
-    axs[1].hist(df['A'], color='green')
+    axs[1].hist(df[a_column], color='green')
     axs[1].set_xlabel('Arousal')
-    axs[2].hist(df['D'], color='blue')
+    axs[2].hist(df[d_column], color='blue')
     axs[2].set_xlabel('Dominance')
     fig.suptitle('Frequency of VAD Values')
     
@@ -205,24 +230,82 @@ def plot_VAD_boxplot(data):
     Returns:
     None
     """
+    v_column = None
+    a_column = None
+    d_column = None
+    
+    if 'V' in data.columns:
+        v_column = 'V'
+    elif 'V_MEAN' in data.columns:
+        v_column = 'V_MEAN'
+    else:
+        raise ValueError("No column 'V' or 'V_MEAN' found in the DataFrame.")
+    
+    if 'A' in data.columns:
+        a_column = 'A'
+    elif 'A_MEAN' in data.columns:
+        a_column = 'A_MEAN'
+    else:
+        raise ValueError("No column 'A' or 'A_MEAN' found in the DataFrame.")
+    
+    if 'D' in data.columns:
+        d_column = 'D'
+    elif 'D_MEAN' in data.columns:
+        d_column = 'D_MEAN'
+    else:
+        raise ValueError("No column 'D' or 'D_MEAN' found in the DataFrame.")
+    
     plt.figure(figsize=(15,6))
-    sns.boxplot(data=data[['V', 'A', 'D']], palette='Set3')
+    sns.boxplot(data=data[[v_column, a_column, d_column]], palette='Set3')
     plt.title('Distribution of VAD Values')
     plt.legend(labels=['Valence (V)', 'Arousal (A)', 'Dominance (D)'])
-    plt.show()
+
     return plt.show()
 
 
 
 
 def plot_vad_scatter(df):
+    """
+    Plots a scatter plot of Valence (V) against Arousal (A) with Dominance (D) as the color hue.
+
+    Parameters:
+        df (pandas.DataFrame): DataFrame containing columns 'V', 'V_MEAN', 'A', 'A_MEAN', 'D', or 'D_MEAN' representing Valence, Arousal, and Dominance, respectively.
+
+    Returns:
+        None
+    """
+   x_column = None
+    y_column = None
+    hue_column = None
+    
+    if 'V' in df.columns:
+        x_column = 'V'
+    elif 'V_MEAN' in df.columns:
+        x_column = 'V_MEAN'
+    else:
+        raise ValueError("No column 'V' or 'V_MEAN' found in the DataFrame.")
+    
+    if 'A' in df.columns:
+        y_column = 'A'
+    elif 'A_MEAN' in df.columns:
+        y_column = 'A_MEAN'
+    else:
+        raise ValueError("No column 'A' or 'A_MEAN' found in the DataFrame.")
+    
+    if 'D' in df.columns:
+        hue_column = 'D'
+    elif 'D_MEAN' in df.columns:
+        hue_column = 'D_MEAN'
+    else:
+        raise ValueError("No column 'D' or 'D_MEAN' found in the DataFrame.")
     
     plt.figure(figsize=(15,6))
-    sns.scatterplot(x='V', y='A', hue='D', data=df)  
+    sns.scatterplot(x=x_column, y=y_column, hue=hue_column, data=df)  
     plt.title("Scatter Plot of VAD Values")
     plt.xlabel("Valence (V)")
     plt.ylabel("Arousal (A)")
-    
+
     plt.legend(title="Dominance (D)", loc='best', labels=['Low', 'Medium', 'High'])
     
     return plt.show()
@@ -240,17 +323,42 @@ def plot_emotion_distributions(df):
         None
     """
 
+    v_column = None
+    a_column = None
+    d_column = None
+    
+    if 'V' in df.columns:
+        v_column = 'V'
+    elif 'V_MEAN' in df.columns:
+        v_column = 'V_MEAN'
+    else:
+        raise ValueError("No column 'V' or 'V_MEAN' found in the DataFrame.")
+    
+    if 'A' in df.columns:
+        a_column = 'A'
+    elif 'A_MEAN' in df.columns:
+        a_column = 'A_MEAN'
+    else:
+        raise ValueError("No column 'A' or 'A_MEAN' found in the DataFrame.")
+    
+    if 'D' in df.columns:
+        d_column = 'D'
+    elif 'D_MEAN' in df.columns:
+        d_column = 'D_MEAN'
+    else:
+        raise ValueError("No column 'D' or 'D_MEAN' found in the DataFrame.")
+    
     fig, axs = plt.subplots(nrows=1, ncols=3, figsize=(18, 6))
 
-    sns.distplot(df['V'], ax=axs[0], color='red')
+    sns.distplot(df[v_column], ax=axs[0], color='red')
     axs[0].set_xlabel('Valence')
     axs[0].set_ylabel('Density')
 
-    sns.distplot(df['A'], ax=axs[1], color='green')
+    sns.distplot(df[a_column], ax=axs[1], color='green')
     axs[1].set_xlabel('Arousal')
     axs[1].set_ylabel('Density')
 
-    sns.distplot(df['D'], ax=axs[2], color='blue')
+    sns.distplot(df[d_column], ax=axs[2], color='blue')
     axs[2].set_xlabel('Dominance')
     axs[2].set_ylabel('Density')
 
@@ -269,8 +377,33 @@ def plot_VAD_pairplot(df):
         None
     """
 
-    sns.pairplot(df, vars=['V', 'A', 'D'], height=4)
-    return plt.show()
+    v_column = None
+    a_column = None
+    d_column = None
+    
+    if 'V' in df.columns:
+        v_column = 'V'
+    elif 'V_MEAN' in df.columns:
+        v_column = 'V_MEAN'
+    else:
+        raise ValueError("No column 'V' or 'V_MEAN' found in the DataFrame.")
+    
+    if 'A' in df.columns:
+        a_column = 'A'
+    elif 'A_MEAN' in df.columns:
+        a_column = 'A_MEAN'
+    else:
+        raise ValueError("No column 'A' or 'A_MEAN' found in the DataFrame.")
+    
+    if 'D' in df.columns:
+        d_column = 'D'
+    elif 'D_MEAN' in df.columns:
+        d_column = 'D_MEAN'
+    else:
+        raise ValueError("No column 'D' or 'D_MEAN' found in the DataFrame.")
+    
+    sns.pairplot(df, vars=[v_column, a_column, d_column], height=4)
+    plt.show()
 
 
     
@@ -285,19 +418,54 @@ def create_heatmap(df):
         None
     """
 
-    df['word_counts'] = df['text'].apply(lambda x: len(x.split()))     # Add word count column to the DataFrame
+    v_column = None
+    a_column = None
+    d_column = None
 
-    # Add special character count column to the DataFrame
-    df['special_chars_count'] = df['text'].apply(lambda x: len(re.findall(r'[^\w\s]', x)))
+    if 'V' in df.columns:
+        v_column = 'V'
+    elif 'V_MEAN' in df.columns:
+        v_column = 'V_MEAN'
+    else:
+        raise ValueError("No column 'V' or 'V_MEAN' found in the DataFrame.")
 
-    # Compute the correlation matrix
-    corr_matrix = df[['V', 'A', 'D','word_counts','special_chars_count']].corr()
+    if 'A' in df.columns:
+        a_column = 'A'
+    elif 'A_MEAN' in df.columns:
+        a_column = 'A_MEAN'
+    else:
+        raise ValueError("No column 'A' or 'A_MEAN' found in the DataFrame.")
+
+    if 'D' in df.columns:
+        d_column = 'D'
+    elif 'D_MEAN' in df.columns:
+        d_column = 'D_MEAN'
+    else:
+        raise ValueError("No column 'D' or 'D_MEAN' found in the DataFrame.")
+
+    # Create a copy of the DataFrame without modifying the original DataFrame
+    modified_df = df.copy()
+
+    if 'text' in df.columns:
+        # Add word count column to the DataFrame
+        modified_df['word_counts'] = modified_df['text'].apply(lambda x: len(x.split()))
+
+        # Add special character count column to the DataFrame
+        modified_df['special_chars_count'] = modified_df['text'].apply(lambda x: len(re.findall(r'[^\w\s]', x)))
+
+        # Select the columns to include in the correlation matrix
+        
+        columns = [v_column, a_column, d_column, 'word_counts', 'special_chars_count']
+    else:
+        columns = [v_column, a_column, d_column]
+    
+    corr_matrix = modified_df[columns].corr()
 
     # Set up the figure
     fig, ax = plt.subplots(figsize=(8, 6))
 
     # Draw the heatmap
-    sns.heatmap(corr_matrix, annot=True, cmap='coolwarm', vmin=-1, vmax=1, center=0, ax=ax)
+    sns.heatmap(corr_matrix, annot=True, cmap='coolwarm', center=0, ax=ax)
 
     # Set the title
     ax.set_title('Correlation Heat Map between the Features')
