@@ -385,7 +385,7 @@ def plot_emotion_distributions(df):
     sns.distplot(df[d_column], ax=axs[2], color='blue')
     axs[2].set_xlabel('Dominance')
     axs[2].set_ylabel('Density')
-    plt.title("Distplot of VAD values")
+    fig.suptitle('VAD Distributions', fontsize=16)
 
     return plt.show()
 
@@ -427,8 +427,8 @@ def plot_VAD_pairplot(df):
     else:
         raise ValueError("No column 'D' or 'D_MEAN' found in the DataFrame.")
     
-    sns.pairplot(df, vars=[v_column, a_column, d_column], height=4)
-    plt.title("Pairplot of VAD Values")
+    sns.pairplot(df, vars=[v_column, a_column, d_column], height=4,title = "Pairplot of VAD Values")
+
     return plt.show()
 
 
