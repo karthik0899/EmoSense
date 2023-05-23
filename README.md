@@ -10,7 +10,7 @@ This repository is for project EmoSense.
 
 📚 We are working on "An Approach to Uncover The Roots of Complex Emotions."
 
-🎯 Our project aims to develop a model (AURA_Text) that can predict the Valence, Arousal, and Dominance (VAD) values of a given sentence. VAD represents three independent and bipolar dimensions: pleasure-displeasure, degree of arousal, and dominance-submissiveness. These values can help predict the corresponding emotions present in the text, enabling a better understanding of emotions and enhancing user experiences in text-based interactions.
+🎯 Our project aims to develop a model (AURA-Text) that can predict the Valence, Arousal, and Dominance (VAD) values of a given sentence. VAD represents three independent and bipolar dimensions: pleasure-displeasure, degree of arousal, and dominance-submissiveness. These values can help predict the corresponding emotions present in the text, enabling a better understanding of emotions and enhancing user experiences in text-based interactions.
 
 📈 **Expected Outcomes**:
 Our project's expected outcome is a model that accurately predicts complex emotions in text. We will evaluate the output using human intuition and other data available in EmoBank. We anticipate that our model will perform well and provide an accurate representation of the emotions conveyed in the text.
