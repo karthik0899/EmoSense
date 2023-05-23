@@ -11,7 +11,7 @@ Are you ready to dive deep into the fascinating world of emotions? Join our extr
 4. 🧑‍💻 Swarnava Bhattacharjee - The Emotion Decoder
 
 📚 **The Quest for EmoSense**:
-Our mission is to develop AURA_Text, an extraordinary model that possesses the remarkable ability to predict the Valence, Arousal, and Dominance (VAD) values of any given sentence. These three dimensions of emotions, capturing pleasure-displeasure, degree of arousal, and dominance-submissiveness, are the key to understanding the complex emotional landscape of any text. 🌈✨
+Our mission is to develop **AURA-Text**, an extraordinary model that possesses the remarkable ability to predict the Valence, Arousal, and Dominance (VAD) values of any given sentence. These three dimensions of emotions, capturing pleasure-displeasure, degree of arousal, and dominance-submissiveness, are the key to understanding the complex emotional landscape of any text. 🌈✨
 
 💡 **Why EmoSense Matters**:
 By unraveling the emotions hidden within text, EmoSense opens up a world of possibilities. Imagine applications that can truly understand and empathize with your emotions, revolutionizing your digital experiences. Whether it's chatbots, virtual assistants, or sentiment analysis, EmoSense is here to elevate your interactions to a whole new level. 📱💬🤖
