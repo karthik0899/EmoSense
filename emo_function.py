@@ -342,45 +342,91 @@ def original_split(df):
     test_df = df[df['split'] == 'test'].copy()
     return train_df, dev_df, test_df
 
-def add_emotion_features(dataset, inplace=False):
-    """
-    Adds emotion features to a dataset based on the columns 'V', 'A', and 'D'.
 
-    Args:
+def add_emotion_features(dataset, scaled=False, pred=False, inplace=False):
+    """
+    Adds emotion features to a dataset based on valence, arousal, and dominance values.
+
+    Parameters:
         dataset (pandas.DataFrame): The dataset to which emotion features will be added.
-        inplace (bool, optional): Specifies whether to modify the dataset in-place or create a copy. 
-                                  If False (default), a copy of the dataset is made before modifying it.
+        scaled (bool, optional): Whether the dataset contains scaled (normalized) valence, arousal, and dominance columns. Defaults to False.
+            - if scaled is True, original is False
+        pred (bool, optional): Whether the dataset contains predicted valence, arousal, and dominance columns. Defaults to False.
+        inplace (bool, optional): Whether to modify the dataset in-place or return a modified copy. Defaults to False.
 
     Returns:
-        pandas.DataFrame: The dataset with added emotion features if inplace=False, otherwise None.
+        pandas.DataFrame: The dataset with emotion features added.
 
-    Raises:
-        None.
+    Description:
+        The add_emotion_features function adds emotion features to a dataset based on valence (V), arousal (A), and dominance (D) values. The function accepts the dataset as input and modifies it by adding one or more new columns containing the emotion features.
 
-    Examples:
-        >>> data = pd.DataFrame({'V': [0.5, 0.7, 0.3], 'A': [0.2, 0.4, 0.6], 'D': [0.8, 0.1, 0.5]})
-        >>> modified_data = add_emotion_features(data)
-        >>> print(modified_data)
-                  V    A    D emotion_features
-        0  0.5  0.2  0.8     (0.5, 0.2, 0.8)
-        1  0.7  0.4  0.1     (0.7, 0.4, 0.1)
-        2  0.3  0.6  0.5     (0.3, 0.6, 0.5)
+        The function provides flexibility with the following parameters:
+        - scaled: If set to True, the function assumes that the dataset contains scaled (normalized) valence, arousal, and dominance columns, and adds the emotion features with the name 'emotion_features_scaled'. If set to False (default), the function assumes the dataset contains true valence, arousal, and dominance values and adds the emotion features with the name 'emotion_features_true'.
+        - pred: If set to True, the function assumes the dataset contains predicted valence, arousal, and dominance columns with names suffixed by '_pred' (e.g., 'V_pred', 'A_pred', 'D_pred'). It adds the emotion features with the name 'emotion_features_pred'. If set to False (default), the function does not consider predicted columns.
+        - inplace: If set to True, the function modifies the dataset in-place. If set to False (default), the function creates a copy of the dataset and modifies the copy, leaving the original dataset unchanged.
 
+        The function checks the presence of the required columns in the dataset based on the parameter settings. If any required column is missing, it prints a warning message indicating the missing column(s).
+
+        The emotion features are added as new columns in the dataset. Each feature is represented as a tuple of valence, arousal, and dominance values, corresponding to each row in the dataset.
+
+    Example:
+        >>> import pandas as pd
+        >>> data = {'V': [0.5, 0.8, 0.3], 'A': [0.7, 0.6, 0.9], 'D': [0.2, 0.4, 0.1]}
+        >>> df = pd.DataFrame(data)
+        >>> add_emotion_features(df, scaled=True)
+           V  A  D    emotion_features_scaled
+        0  0.5  0.7  0.2  (0.5, 0.7, 0.2)
+        1  0.8  0.6  0.4  (0.8, 0.6, 0.4)
+        2  0.3  0.9  0.1  (0.3, 0.9, 0.1)
     """
+
+    print(f'scaled(if True/1 then Original is False/0 ): {scaled}  pred: {pred}  inplace: {inplace}')
     if not inplace:
         dataset = dataset.copy()
     
-    if all(col in dataset.columns for col in ['V', 'A', 'D']):
-        emotion_features = list(zip(dataset['V'], dataset['A'], dataset['D']))
-        dataset['emotion_features'] = pd.Series(emotion_features)
+    if scaled:
+        v_col = 'V_SCALED'
+        a_col = 'A_SCALED'
+        d_col = 'D_SCALED'
+        name = 'emotion_features_scaled'
+        if all(col in dataset.columns for col in [v_col, a_col, d_col]):
+            emotion_features = list(zip(dataset[v_col], dataset[a_col], dataset[d_col]))
+            dataset[name] = pd.Series(emotion_features)
+        else:
+            missing_columns = [col for col in [v_col, a_col, d_col] if col not in dataset.columns]
+            print(f"The following columns are missing in the dataset: {', '.join(missing_columns)}")
     else:
-        missing_columns = [col for col in ['V', 'A', 'D'] if col not in dataset.columns]
-        print(f"The following columns are missing in the dataset: {', '.join(missing_columns)}")
+        v_col = 'V'
+        a_col = 'A'
+        d_col = 'D'
+        name = 'emotion_features_true'
+        if all(col in dataset.columns for col in [v_col, a_col, d_col]):
+            emotion_features = list(zip(dataset[v_col], dataset[a_col], dataset[d_col]))
+            dataset[name] = pd.Series(emotion_features)
+        else:
+            missing_columns = [col for col in [v_col, a_col, d_col] if col not in dataset.columns]
+            print(f"The following columns are missing in the dataset: {', '.join(missing_columns)}")
     
-    if inplace:
-        return None
-    else:
-        return dataset
+    v_col = 'V'
+    a_col = 'A'
+    d_col = 'D'
+    if pred:
+        v_col += '_pred'
+        a_col += '_pred'
+        d_col += '_pred'
+        name = 'emotion_features_pred'
+        if all(col in dataset.columns for col in [v_col, a_col, d_col]):
+            emotion_features = list(zip(dataset[v_col], dataset[a_col], dataset[d_col]))
+            dataset[name] = pd.Series(emotion_features)
+        else:
+            missing_columns = [col for col in [v_col, a_col, d_col] if col not in dataset.columns]
+            print(f"The following columns are missing in the dataset: {', '.join(missing_columns)}")
+    
+    return dataset
+#     if inplace:
+#         return None
+#     else:
+#         return dataset
     
 #-------------------------------------------------------------------Data EDA & Analysis ---------------------------------------------------------------------------------
 
