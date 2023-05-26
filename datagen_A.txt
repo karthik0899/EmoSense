@@ -1,0 +1,31 @@
+Sentence,Arousal
+"The serene garden nurtured a sense of tranquility in me.",1.5
+"In the stillness of the early morning, I felt my heart brimming with a peaceful contentment.",1.6
+"As I sat quietly by the fireplace, a wave of warmth and ease washed over me.",1.7
+"Gazing at the sunset, a soothing calmness enveloped my entire being.",1.6
+"Amidst the silent woods, I felt my soul connect with the subtle harmony of nature.",1.9
+"The melody of the soft rain brought a sense of peaceful solitude.",1.7
+"As I read my favorite book in the dimmed room, a tranquil calm seeped into my spirit.",1.8
+"My heart floated in a sea of tranquility, lulled by the distant sound of the ocean waves.",1.7
+"On a quiet evening, the stars above whispered stories of serenity.",1.9
+"The gentle scent of lavender lulling me into a state of serene calm.",1.6
+"In the coolness of the evening, a sense of tranquility took hold of me.",1.9
+"Listening to the soothing lullaby, I felt a deep sense of peaceful calm.",1.8
+"During the silent night, I was bathed in a tranquil stillness.",1.7
+"As I lay in the grass, watching the clouds, a gentle calmness engulfed me.",1.8
+"The sound of the trickling stream had a serene and calming effect on me.",1.7
+"The soft rustling of leaves in the breeze gave me a sense of peaceful solitude.",1.6
+"The whisper of the wind through the trees lulled me into a tranquil calm.",1.9
+"As I walked along the beach, the rhythm of the waves brought a sense of calm to my heart.",1.7
+"The moonlit night filled me with a sense of calm serenity.",1.8
+"As I sat by the window, watching the rain, a deep sense of calm settled in my soul.",1.7
+"That evening, I was immersed in a private and calm state.",1.8
+"A serene calmness was my companion on that night.",1.8
+"The tranquility of that night wrapped me in a personal calm.",1.8
+"That night, I was drenched in a feeling of calmness and solitude.",1.8
+"A sense of peace and privacy enveloped me that evening.",1.8
+"I was encompassed by an aura of tranquility and solitude that night.",1.8
+"That night, a quiet calm permeated my being.",1.8
+"I was basking in a gentle calmness and solitude that night.",1.8
+"On that night, I felt a serene calmness wash over me.",1.8
+"That night was filled with a soothing tranquility just for me.",1.8
