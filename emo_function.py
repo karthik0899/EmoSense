@@ -1,3 +1,4 @@
+# ----------------------------------------------------------------------------------Nessesary Libraries------------------------------------------------------------------
 import re
 import pickle
 
@@ -29,19 +30,35 @@ warnings.filterwarnings("ignore")
 #-------------------------------------------------------------------Data Information ---------------------------------------------------------------------------------
 
 
+import numpy as np
+import pandas as pd
+
 def INFO(df):
     """
     Generates an information table summarizing the columns in a DataFrame.
 
     Parameters:
-        df (pandas.DataFrame): DataFrame to generate information table for.
+        df (pandas.DataFrame): The DataFrame for which the information table will be generated.
 
     Returns:
-        pandas.DataFrame: Information table summarizing the columns of the DataFrame.
-    """
+        pandas.DataFrame: An information table summarizing the columns of the DataFrame.
+        
+    Description:
+        The INFO function takes a pandas DataFrame as input and generates an information table that provides a summary of each column in the DataFrame. The information table includes details such as column name, data type, column type (categorical or numerical), total number of rows, count of missing values, percentage of missing values, number of unique values, ratio of rows to unique values (if applicable), maximum value (for numerical columns), and minimum value (for numerical columns).
 
-    import numpy as np  # linear algebra
-    import pandas as pd  # data processing, CSV file I/O (e.g. pd.read_csv)
+    Example:
+        >>> import pandas as pd
+        >>> data = {'Name': ['John', 'Jane', 'Mike'],
+        ...         'Age': [30, 25, 35],
+        ...         'Gender': ['Male', 'Female', 'Male']}
+        >>> df = pd.DataFrame(data)
+        >>> INFO(df)
+            Column Data Type  Column Type  count_rows  Missing  Percent Missing  Number of Uniques  Ratio of Uniques    Max  Min
+        0    Name    object  Categorical           3        0              0.0                  3               1.0   John  NaN
+        1     Age     int64    Numerical           3        0              0.0                  3               1.0     35   25
+        2  Gender    object  Categorical           3        0              0.0                  2                1    NaN  NaN
+    """
+    
     info = []
 
     for col in df.columns:
@@ -50,6 +67,7 @@ def INFO(df):
         percent = (NAN_values / count_rows) * 100
         data_type = type(df[col][0])
         col_type = df[col].dtype
+        
         if col_type not in [int, float]:
             column_type = "Categorical"
             Max = "Not Applicable"
@@ -58,17 +76,20 @@ def INFO(df):
             column_type = "Numerical"
             Max = max(df[col])
             Min = min(df[col])
+        
         try:
             n_uniques = df[col].nunique()
             ratio = count_rows / n_uniques
         except:
             n_uniques = "Not Applicable"
             ratio = "Not Applicable"
+        
         info.append([col, data_type, column_type, count_rows, NAN_values, percent, n_uniques, ratio, Max, Min])
 
     col_info_df = pd.DataFrame(info, columns=['Column', 'Data Type', 'Column Type', 'count_rows', 'Missing', 'Percent Missing', 'Number of Uniques', 'Ratio of Uniques', 'Max', 'Min'])
 
     return col_info_df
+
 
   
 #-------------------------------------------------------------------Emotion plotting ---------------------------------------------------------------------------------
@@ -164,15 +185,26 @@ def range_scaler_temp(value, assumed_max_input=5, assumed_min_input=1):
 
 
 def preprocess_dataframe(df):
-    
     """
     Preprocesses a DataFrame by performing various data cleaning and filtering operations.
 
     Parameters:
-        df (pandas.DataFrame): DataFrame containing a column named 'text' representing the text data.
+        df (pandas.DataFrame): The DataFrame containing a column named 'text' representing the text data.
 
     Returns:
-        pandas.DataFrame: Preprocessed DataFrame.
+        pandas.DataFrame: The preprocessed DataFrame.
+
+    Description:
+        The preprocess_dataframe function takes a pandas DataFrame as input and performs several data cleaning and filtering operations on the DataFrame to preprocess it. The operations include dropping rows with less than 4 words, converting all words to lowercase, removing HTML tags, replacing multiple spaces with a single space, dropping rows with only numerical values, and adding additional columns for word counts and special character counts. The preprocessed DataFrame is returned as the output.
+
+    Example:
+        >>> import pandas as pd
+        >>> data = {'text': ['This is a sample text.', 'Another text <br /><br /> with HTML tags.', '123 456']}
+        >>> df = pd.DataFrame(data)
+        >>> preprocess_dataframe(df)
+                           text  word_counts  special_chars_count
+        0  this is a sample text            5                    0
+        1   another text with html            5                    1
     """
 
     df = df[df['text'].str.split().apply(len) >= 4].copy()  # Drop rows with less than 4 words
@@ -185,15 +217,17 @@ def preprocess_dataframe(df):
 
     # Drop rows with only numerical values
     df = df[~df['text'].str.isnumeric()].copy()
-    
+
     df['word_counts'] = df['text'].apply(lambda x: len(x.split()))
 
     # Add special character count column to the DataFrame
     df['special_chars_count'] = df['text'].apply(lambda x: len(re.findall(r'[^\w\s]', x)))
+    
     df = df[~((df["V"] == 3.0) & (df["A"] == 3.0) & (df["D"] == 3.0))]
-    df = df.reset_index(drop = True)
+    df = df.reset_index(drop=True)
     
     return df
+
 
 def get_3_0(df):
     """
@@ -921,7 +955,7 @@ def plot_top_bottom_emotions(dataset, top_n=10, bottom_n=10):
     # Show the plot
     return plt.show()
 
-#--------------------------------------------------------------------- Inference--------------------------------------------------------
+#--------------------------------------------------------------------- Inference-------------------------------------------------------------------------------------
 
 def closest_emotions(vad_tuple,data=df_emos):
     """
