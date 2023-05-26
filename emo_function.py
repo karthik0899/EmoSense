@@ -822,3 +822,43 @@ def bins_distribution(df):
 
     # Return the figure
     return plt.show()
+
+def plot_top_bottom_emotions(dataset, top_n=10, bottom_n=10):
+    """
+    Plot horizontal bar charts for the top N and bottom N emotions in the dataset.
+
+    Parameters:
+        - dataset (DataFrame): The dataset containing the 'emotions' column.
+        - top_n (int, optional): Number of top emotions to display. Default is 10.
+        - bottom_n (int, optional): Number of bottom emotions to display. Default is 10.
+
+    Returns:
+        None
+
+    """
+    # Count the occurrences of each emotion
+    emotion_counts = dataset['emotions'].value_counts()
+
+    # Sort the counts in descending order
+    sorted_counts = emotion_counts.sort_values(ascending=False)
+
+    # Get the top N and bottom N emotions
+    top_emotions = sorted_counts.head(top_n)
+    bottom_emotions = sorted_counts.tail(bottom_n)
+
+    # Create subplots
+    fig, axes = plt.subplots(2, 1, figsize=(12, 8))
+
+    # Plot the top N emotions
+    axes[0].barh(top_emotions.index, top_emotions.values)
+    axes[0].set_title(f'Top {top_n} Emotions')
+
+    # Plot the bottom N emotions
+    axes[1].barh(bottom_emotions.index, bottom_emotions.values)
+    axes[1].set_title(f'Bottom {bottom_n} Emotions')
+
+    # Adjust spacing between subplots
+    plt.tight_layout()
+
+    # Show the plot
+    return plt.show()
