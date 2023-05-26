@@ -141,6 +141,24 @@ def range_scaler(array, assumed_max_input=5, assumed_min_input=1):
     array_scaled = array_std * (1 - (-1)) + (-1)
     return array_scaled
 
+def range_scaler_temp(value, assumed_max_input=5, assumed_min_input=1):
+    """
+    Scale the input value to the range of -1 to 1.
+
+    Parameters:
+        value (float): Input value to be scaled.
+        assumed_max_input (float): Assumed maximum value of the input array. Default is 5.
+        assumed_min_input (float): Assumed minimum value of the input array. Default is 1.
+
+    Returns:
+        float: Scaled value ranging from -1 to 1.
+    """
+    value_std = (value - assumed_min_input) / (assumed_max_input - assumed_min_input)
+    value_scaled = value_std * (1 - (-1)) + (-1)
+    return value_scaled
+
+
+
 
 #-------------------------------------------------------------------Data Preprocessing ---------------------------------------------------------------------------------
 
@@ -288,6 +306,46 @@ def original_split(df):
     test_df = df[df['split'] == 'test'].copy()
     return train_df, dev_df, test_df
 
+def add_emotion_features(dataset, inplace=False):
+    """
+    Adds emotion features to a dataset based on the columns 'V', 'A', and 'D'.
+
+    Args:
+        dataset (pandas.DataFrame): The dataset to which emotion features will be added.
+        inplace (bool, optional): Specifies whether to modify the dataset in-place or create a copy. 
+                                  If False (default), a copy of the dataset is made before modifying it.
+
+    Returns:
+        pandas.DataFrame: The dataset with added emotion features if inplace=False, otherwise None.
+
+    Raises:
+        None.
+
+    Examples:
+        >>> data = pd.DataFrame({'V': [0.5, 0.7, 0.3], 'A': [0.2, 0.4, 0.6], 'D': [0.8, 0.1, 0.5]})
+        >>> modified_data = add_emotion_features(data)
+        >>> print(modified_data)
+                  V    A    D emotion_features
+        0  0.5  0.2  0.8     (0.5, 0.2, 0.8)
+        1  0.7  0.4  0.1     (0.7, 0.4, 0.1)
+        2  0.3  0.6  0.5     (0.3, 0.6, 0.5)
+
+    """
+    if not inplace:
+        dataset = dataset.copy()
+    
+    if all(col in dataset.columns for col in ['V', 'A', 'D']):
+        emotion_features = list(zip(dataset['V'], dataset['A'], dataset['D']))
+        dataset['emotion_features'] = pd.Series(emotion_features)
+    else:
+        missing_columns = [col for col in ['V', 'A', 'D'] if col not in dataset.columns]
+        print(f"The following columns are missing in the dataset: {', '.join(missing_columns)}")
+    
+    if inplace:
+        return None
+    else:
+        return dataset
+    
 #-------------------------------------------------------------------Data EDA & Analysis ---------------------------------------------------------------------------------
 
 
@@ -862,3 +920,27 @@ def plot_top_bottom_emotions(dataset, top_n=10, bottom_n=10):
 
     # Show the plot
     return plt.show()
+
+#--------------------------------------------------------------------- Inference--------------------------------------------------------
+
+def closest_emotions(vad_tuple,data=df_emos):
+    """
+    Classify emotions based on valence, arousal, and dominance values.
+
+    Parameters:
+        vad_tuple (tuple): Tuple containing valence, arousal, and dominance values.
+
+    Returns:
+        str: The closest emotion based on the input VAD values.
+    """
+    v_valence, v_arousal, v_dominance = vad_tuple
+    # Load the dataset from a CSV file
+    dataset = data.copy()
+
+    # Calculate the Euclidean distances between the point and the centers of each emotion
+    dataset['Distance'] = np.sqrt((dataset['V_MEAN'] - v_valence) ** 2 + (dataset['A_MEAN'] - v_arousal) ** 2 + (dataset['D_MEAN'] - v_dominance) ** 2)
+
+    # Sort the emotions by distance and select the closest one
+    closest_emotion = dataset.loc[dataset['Distance'].idxmin(), 'Emotion']
+    
+    return closest_emotion
