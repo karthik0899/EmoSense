@@ -61,7 +61,7 @@ Sentence;Valence
 'Seeing your progress on the project, I'm extremely confident about our success.';4.4
 'Your laughter is so infectious, it always brightens up the room.';4.5
 'Every time I walk into this garden, the beauty of nature amazes me.';4.3
-'I feel so proud of our kids; they’ve been really excelling in their studies.';4.4
+'I feel so proud of our kids, they’ve been really excelling in their studies.';4.4
 'Your latest artwork is simply stunning, it brings so much joy to my heart.';4.6
 'The performance at the concert last night was extraordinary, I'm still in awe.';4.5
 'The taste of this homemade chocolate cake is simply divine.';4.7
