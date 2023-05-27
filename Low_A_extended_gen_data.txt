@@ -1,3 +1,4 @@
+Sentence;Arousal
 Resting on the hammock, I felt my body surrendering to the rhythm of the soft breeze.;1.5
 In the quiet library, I was drawn into the captivating world of my book.;1.4
 As the sun set, a gentle, peaceful tiredness seeped into my bones.;1.3
