@@ -1,0 +1,115 @@
+Sentence;Arousal
+School's out, Adventure awaits, let's pack for CAMP!;4.2
+Sun's up, and it's all about CAMP spirit this season!;4.3
+Nature's call, embrace the thrill of summer CAMP!;4.4
+Ah, the beauty of summer, it's time to immerse in CAMP festivities!;4.5
+Take a hike!;4.1
+Get lost!;4.4
+Buzz off!;4.3
+You're unwelcome here!;4.5
+Still believe messing with America was smart, [NAME]?;4.3
+You reckon provoking the States was wise, [NAME]?;4.5
+Thought challenging the U.S. was a winning move, did you [NAME]?;4.2
+Convinced that crossing paths with the U.S. was savvy, [NAME]?;4.4
+Incredible!;4.5
+Astounding!;4.2
+Stunning!;4.4
+Remarkable!;4.1
+My offspring will embrace their homosexuality!;4.3
+My son or daughter is sure to identify as gay!;4.5
+I envision my child living proudly as a gay individual!;4.4
+My progeny is bound to express their gay identity!;4.2
+I'm thrilled that we're teammates for the foreseeable future.;4.3
+I can't contain my excitement that we'll collaborate as one team.;4.5
+I'm overflowing with enthusiasm for our shared journey in this team.;4.4
+I can hardly hold back my joy, we're going to work as a team!;4.1
+Bloody hell!;4.2
+Damn it all!;4.4
+Blast it!;4.5
+Crap baskets!;4.1
+I’m certain, my eyes weren’t tricking me!;4.3
+Undeniably, he was in my sight!;4.4
+Without doubt, he fell under my gaze!;4.5
+Unquestionably, I observed him!;4.1
+Reconsider your actions, youngster!;4.1
+This isn't the path, lad!;4.3
+Hold back, child!;4.4
+Refrain from this, kiddo!;4.2
+Look to your rear!;4.3
+Turn around!;4.5
+In your wake!;4.4
+At your six!;4.2
+Breaking news: Infant pandas! Infant pandas! Infant pandas!;4.4
+Newly born pandas on the scene! I repeat, newborn pandas!;4.5
+Alert! Panda cubs, Panda cubs, Panda cubs!;4.1
+Exclusive: Panda babies! They're here, they're here!;4.3
+Curse you,;4.3
+Condemn you,;4.5
+Blast you,;4.4
+Accursed be you,;4.2
+Continue without cease!;4.3
+Maintain your course!;4.5
+Press on relentlessly!;4.2
+Persist undeterred!;4.4
+Touche!;4.5
+Eureka!;4.3
+Bingo!;4.4
+Aha!;4.2
+She roared, 'I've never mingled with Terra's upper crust!';4.5
+She hollered, 'Interacting with Terra's high society isn't my forte!';4.3
+She shriek
+
+ed, 'I haven't rubbed shoulders with Terra's aristocracy!';4.4
+She bellowed, 'I'm not used to hobnobbing with the elite of Terra!';4.1
+And thus, we yielded to passion.;4.3
+And then, we succumbed to our desires.;4.5
+After that, we surrendered to the dance of love.;4.2
+Thereafter, we engaged in the act of intimacy.;4.4
+By heavens, absolutely, undeniably, unequivocally!;4.5
+Lord above, indeed, definitely, precisely!;4.3
+Dear divine, sure, certainly, absolutely!;4.2
+By the gods, without a doubt, certainly, assuredly!;4.1
+Convey my undying affection to her.;4.3
+Inform her of my profound love.;4.4
+Pass on my sincere love for her.;4.2
+Communicate my deep adoration for her.;4.5
+I detest it, loathe it, scorn it!;4.3
+I can't stand it, reject it, repudiate it!;4.5
+I find it repugnant, revolting, repellent!;4.1
+I am sick of it, resent it, find it repulsive!;4.2
+You better not!;4.2
+I forbid you!;4.3
+You mustn't!;4.5
+Think twice before you act!;4.4
+I'm smitten.;4.3
+I've fallen head over heels.;4.4
+I'm lost in affection.;4.2
+My heart has been captivated.;4.5
+We hastened without snapping a pic, in brief, AVOID INCINERATING HOMES!;4.3
+Without pausing for a snapshot, to condense, REFRAIN FROM SETTING HOMES AFLAME!;4.4
+We hurried without capturing an image, to summarize, DO NOT ENGAGE IN ARSON!;4.2
+Bypassing the photo op, in essence, SHUN THE ACT OF BURNING DWELLINGS!;4.5
+THE LAW ENFORCEMENT IS VIGILANT!;4.2
+BEWARE, FINEST ARE MONITORING!;4.3
+OFFICERS OF LAW ARE ON THE LOOKOUT!;4.1
+THE POLICE IN ARE KEEPING AN EYE ON YOU!;4.5
+With [NAME], my Lab, I'm bathed in sweet liberty!;4.2
+Alongside [NAME], my Labrador, I'm engulfed in a splendid sense of freedom!;4.4
+In the company of my Lab, [NAME], I taste the delicious essence of liberation!;4.3
+Together with [NAME], my beloved Lab, I experience delightful emancipation!;4.5
+Season's Greetings from our collective hearts!;4.2
+Cheerful Holiday Wishes from our entire group!;4.1
+Merry Celebrations from each one of us!;4.3
+Joyous Festivities from our whole clan!;4.5
+Such audacity beyond belief!;4.3
+A pinnacle of sheer insolence!;4.5
+An epitome of outright defiance!;4.4
+The height of brazen cheekiness!;4.2
+[NAME] declares the planet to be a veritable jewel!;4.4
+[NAME] proclaims the celestial body to be a radiant diamond!;4.2
+[NAME] announces the globe to be a dazzling ruby!;4.3
+[NAME] affirms the planet to be a precious sapphire!;4.1
+Haha! Marvelous! Purely exceptional!;4.5
+Lmao! Fantastic! Truly exquisite!;4.2
+Rofl! Magnificent! Unconditionally splendid!;4.4
+Hehe! Stellar! Utterly impressive!;4.1

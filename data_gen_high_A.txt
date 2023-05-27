@@ -1,0 +1,131 @@
+Sentence;Arousal
+The sun is setting, and the music festival is just beginning – it's going to be an electrifying night!;4.5
+Fasten your seatbelts, folks, we're about to launch into a space adventure!;4.4
+Hold on to your hats, this roller coaster ride is going to take your breath away!;4.3
+Congratulations! You have just won the lottery jackpot!;4.5
+I just can't believe it, our team won the championship!;4.4
+Wow, this spicy chili is setting my mouth on fire!;4.3
+Hurry up, we're late for the concert and I can't wait to see the band live!;4.4
+Ladies and gentlemen, the moment we've been waiting for – the rocket launch!;4.5
+Duck down, there's a swarm of bees coming our way!;4.3
+This is it, I'm about to propose to the love of my life!;4.5
+The movie's climax was so intense, I could feel my heart pounding!;4.4
+Wow, that thunderstorm is wild – just look at those lightning bolts!;4.3
+Pack your bags, we're going on a surprise trip around the world!;4.5
+It's pitch black in here, something just touched my leg!;4.4
+The engine's roared to life – we're about to start the grand race!;4.3
+Hang on tight, this rafting ride is going to be a wild rush!;4.5
+The entire stadium erupted into cheers as the home team scored the winning goal!;4.4
+Wow, the view from the top of this mountain is utterly breathtaking!;4.3
+Quick, take cover! The fireworks are starting, and they're going to be spectacular!;4.5
+Everyone on the dance floor, the DJ is about to drop the beat!;4.4
+Guess what? We're heading to the amusement park today!;4.2
+The boss just announced – we've all earned a bonus this month!;4.4
+Class, we have a pop quiz today, ready your pens!;4.3
+This espresso is so potent, it feels like my heart's doing somersaults!;4.2
+Stand clear of the closing doors, this train is about to depart!;4.1
+I just received an email – I've been accepted into my dream university!;4.5
+The kids are going wild at the park – they've discovered a frog pond!;4.3
+Today's sermon really ignited my faith – I feel so moved!;4.2
+Community potluck tonight – everyone's bringing their best dishes!;4.4
+The store's having a flash sale – everything is half off!;4.5
+Did you hear the news? Our favorite band is coming to town!;4.3
+The CEO just walked into the office – everyone's on their toes!;4.2
+Guess what? I got the leading role in the school play!;4.5
+This new café downtown makes the creamiest lattes!;4.1
+There's a street performer on the subway – he's playing the violin beautifully!;4.2
+I just finished a thrilling book – I couldn't put it down!;4.4
+The park ranger is leading a guided hike this morning – it should be exciting!;4.3
+The choir's harmonies at today's service were absolutely soul-stirring!;4.1
+The community center's hosting a salsa dance class tonight – can't wait!;4.5
+There's a huge clearance sale at the mall today – everything must go!;4.4
+Our neighbors invited us to a surprise birthday party tonight!;4.2
+The project deadline has been moved up – we need to hustle!;4.3
+We're organizing a surprise farewell party for our favorite professor!;4.1
+The chef just presented a new dessert menu – it's absolutely decadent!;4.2
+Last call for boarding – we're about to miss our flight!;4.5
+My friend just posted her wedding pictures online – they look stunning!;4.4
+There's a family picnic at the park today – let's join the fun!;4.3
+Today's sermon was so powerful – I feel spiritually rejuvenated!;4.2
+The local talent show at the community center was a total hit!;4.1
+Black Friday sale is on – brace yourself for the shopping spree!;4.5
+Did you see the firework display downtown? It was mind-blowing!;4.4
+The CEO is visiting our branch office tomorrow – time to impress!;4.2
+I've been chosen to present our project at the school science fair!;4.3
+The café is introducing a new matcha latte – I've got to try it!;4.1
+There's an unexpected traffic jam – we might miss the concert!;4.5
+The newest video game release is tonight – I can't contain my excitement!;4.4
+A funfair just opened near the park – let's go for a ride!;4.3
+I was deeply moved by the guest speaker at today's church service.;4.2
+The community center is hosting a cooking competition – it's going to be a cook-off!;4.1
+The latest phone model just hit the shelves – it's a frenzy at the store!;4.5
+There's an unexpected guest at the party – it's a famous movie star!;4.4
+The marketing team just pulled off a game-changing strategy – we're leading the market!;4.3
+The university is hosting a TEDx event – we have some fantastic speakers lined up!;4.2
+This gourmet pizza at the new Italian café is heavenly!;4.5
+The city is holding a free concert in the park tonight – it's going to be epic!;4.4
+My latest blog post has gone viral – my notifications are blowing up!;4.3
+The annual carnival at the park is more spectacular than ever this year!;4.5
+The sermon at the church today has filled me with newfound resolve!;4.2
+The community center is organizing a charity fun run – it's going to be a blast!;4.1
+This weekend's shopping festival is promising some unbelievable deals!;4.4
+Our favorite artist is hosting a meet-and-greet after the concert!;4.3
+Our project has been shortlisted for the company innovation awards!;4.2
+I've been nominated for 'student of the year' – I'm beyond excited!;4.5
+Have you tried the freshly brewed coffee at the corner café? It's absolutely energizing!;4.1
+The city marathon is tomorrow – the adrenaline rush is real!;4.4
+We're hosting a live Q&A with the author of our book club's current pick tonight!;4.3
+The live performance at the park this evening was exceptionally captivating!;4.2
+I feel incredibly invigorated after today's yoga session at the church retreat.;4.1
+There's a talent showcase at the community center tonight – everyone's buzzing!;4.4
+There's a massive sale at the electronics store – time to upgrade my gear!;4.5
+The city's annual food festival is kicking off this weekend – it's going to be delicious!;4.3
+We just secured a major client – the whole office is celebrating!;4.2
+The college reunion is this weekend – can't wait to catch up with everyone!;4.5
+The new rooftop café has the most breath-taking city view!;4.4
+Rush hour on the subway was intense – I've never seen it so crowded!;4.1
+I just got my exam results – I've topped the class!;4.5
+I witnessed the most beautiful sunrise during the morning jog in the park.;4.2
+The youth service at the church was so inspiring – it was a true awakening!;4.1
+The community center is throwing a surprise birthday party for the town's oldest resident!;4.3
+The mall is bursting with shoppers – holiday season has officially started!;4.4
+The annual music festival line-up has been announced – it's a dream come true!;4.5
+We've won the inter-departmental football tournament – the trophy is ours!;4.2
+I've been elected the class president – it's such an honor!;4.3
+The local café is organizing a poetry slam – I'm so thrilled to participate!;4.1
+The holiday parade is in full swing – the town square is so vibrant!;4.4
+Our gaming squad just won the national championship – we're ecstatic!;4.5
+The summer fair at the park was buzzing with excitement!;4.3
+The Easter service at the church was exceptionally moving this year.;4.2
+The community center is hosting a vintage car exhibition – it's a must-see!;4.1
+The biggest sale of the year is happening – the store is a shopper's paradise!;4.4
+The local band's concert at the bar was absolutely rocking!;4.5
+Our company just got featured in the leading business magazine – we're making waves!;4.3
+I've been selected as the valedictorian – I'm utterly speechless!;4.4
+The themed brunch at the café was an absolute delight!;4.1
+The city's annual bike race is this weekend – I'm all geared up!;4.2
+I've been invited to speak at an online conference – I'm on cloud nine!;4.5
+The open-air cinema at the park was an incredible experience!;4.3
+The spirit at the church's charity drive was truly uplifting.;4.2
+The community center's 'Clean the City' campaign had an overwhelming response!;4.4
+The holiday window displays at the mall are a feast for the eyes!;4.1
+The surprise celebrity appearance at the music festival sent the crowd into a frenzy!;4.5
+We've broken all previous sales records – the office is buzzing with excitement!;4.3
+I've received a full scholarship – my dream university here I come!;4.4
+The exotic tea tasting event at the café was a sensory delight!;4.2
+The city-wide treasure hunt is tomorrow – the anticipation is building!;4.5
+I got an unexpected shoutout from a popular influencer – my social media is on fire!;4.3
+The annual flower show at the park was a riot of colors – it was breathtaking!;4.1
+Today's sermon at the church was a true testament of faith – it was extremely motivating.;4.2
+The community center is hosting a pet adoption event – it's time to welcome a furry friend!;4.4
+The Black Friday crowd at the mall is unprecedented – it's a shopping extravaganza!;4.5
+The jackpot hit at the charity event – we've raised an astronomical sum!;4.9
+Our startup just received a multi-million dollar funding – we're over the moon!;4.8
+I've just been announced as the winner of the national science contest – I'm on top of the world!;4.7
+The legendary band is making a surprise appearance at our local pub – I can hardly contain myself!;4.8
+The city marathon's crowd is massive – the energy is through the roof!;4.9
+My podcast got featured on a global platform – I'm absolutely euphoric!;4.7
+The fireworks display at the park was a spectacle like no other – it left me awe-struck!;4.8
+The Easter service at the church has profoundly moved the entire congregation – it's a spiritual awakening!;4.7
+The community center's annual gala has drawn a record-breaking crowd – it's a monumental success!;4.8
+The holiday sale at the mall is sheer madness – shoppers are going wild!;4.9
