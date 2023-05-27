@@ -1,0 +1,56 @@
+Sentence;Valence
+'May your family receive endless blessings and happiness in the upcoming year.';4.5
+'Praying for a year filled with laughter and warmth for you and your loved ones.';4.4
+'Here's to a year of peace and joy for you and your family.';4.3
+'Hoping for a year of love and prosperity for you and your household.';4.4
+'Let the new year bring your family abundant love and cheer.';4.2
+'Grateful for your guidance once more.';4.2
+'Your assistance in finding the path is much appreciated.';4.1
+'Many thanks for your continued direction and support.';4.3
+'Your help in navigating has been invaluable.';4.2
+'So appreciative of your help in steering me right.';4.15
+'My joy knows no bounds since I finally found you after a long search.';4.4
+'After a lengthy quest, the happiness of finding you is immense.';4.5
+'I've looked far and wide, and the joy of finally discovering you is overwhelming.';4.3
+'The search has been long, but the elation of finally seeing you is indescribable.';4.4
+'Having sought you out everywhere, my joy is boundless now that I've found you.';4.38
+'It thrills me to know we'll be working together for some time.';4.3
+'Knowing we'll be on the same side for a while fills me with anticipation.';4.2
+'The prospect of us being teammates for a period excites me greatly.';4.3
+'I'm full of enthusiasm about us being in the same group for the foreseeable future.';4.1
+'It gives me a great deal of pleasure to think we'll be teaming up for a while.';4.2
+'Your work fills me with admiration.';4.3
+'I deeply appreciate your efforts.';4.2
+'Your actions inspire a great deal of respect in me.';4.4
+'I hold your endeavors in high esteem.';4.2
+'The work you're doing is truly inspiring.';4.4
+'There was a beautiful instant where [NAME] and [NAME] were unified in laughter, making their sides ache.';4.3
+'In an enchanting moment, [NAME] and [NAME] were bonded, giggling until they couldn't breathe.';4.4
+'For a magical instant, [NAME] and [NAME] became a single laughing unit until their stomachs cramped.';4.5
+'During an unforgettable moment, [NAME] and [NAME] merged into one, laughing until they were breathless.';4.4
+'In a splendid moment, [NAME] and [NAME] melded together, laughing until their bellies hurt.';4.2
+'Together with my Lab, [NAME], I experience such exhilarating liberty!';4.2
+'My Lab, [NAME], gives me a sensation of delightful freedom.';4.1
+'The company of my Lab, [NAME], brings me boundless joy and liberation.';4.3
+'With [NAME], my Lab, I feel incredibly unbound!';4.2
+'Being with my Lab, [NAME], I revel in the feeling of sheer freedom!';4.4
+'In essence, joy for all!';4.3
+'Simply put, a delight for each one!';4.2
+'To summarize, enjoyment for everyone involved!';4.4
+'In a nutshell, a pleasure for all parties!';4.3
+'Briefly, entertainment for all!';4.2
+'haha Excellent Just Fantastic!';4.7
+'lol Brilliant Absolutely Amazing!';4.6
+'rofl Marvelous Truly Outstanding!';4.8
+'lol Magnificent Completely Spectacular!';4.7
+'haha Awesome Absolutely Incredible!';4.6
+'My heart holds deep affection for you.';4.3
+'You mean the world to me.';4.2
+'You hold a special place in my heart.';4.3
+'I hold you dear.';4.1
+'You are the treasure of my life.';4.2
+'[NAME], with our hands intertwined, beamed.';4.2
+'Maintaining a grip on my hand, [NAME] flashed a smile.';4.3
+'Holding onto my hand, [NAME] shared a warm grin.';4.1
+'[NAME], whilst clasping my hand, radiated a smile.';4.4
+'With our hands clasped, [NAME] portrayed a joyous smile.';4.2
