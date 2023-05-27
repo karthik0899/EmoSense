@@ -54,3 +54,23 @@ Sentence;Valence
 'Holding onto my hand, [NAME] shared a warm grin.';4.1
 '[NAME], whilst clasping my hand, radiated a smile.';4.4
 'With our hands clasped, [NAME] portrayed a joyous smile.';4.2
+'Look at that beautiful sunrise, it's going to be an incredible day.';4.5
+'I can't believe we're finally going on that dream vacation to Hawaii!';4.6
+'Your recent promotion at work is truly deserved, congratulations!';4.4
+'The meal you've cooked tonight is simply exquisite, it made my day.';4.3
+'Seeing your progress on the project, I'm extremely confident about our success.';4.4
+'Your laughter is so infectious, it always brightens up the room.';4.5
+'Every time I walk into this garden, the beauty of nature amazes me.';4.3
+'I feel so proud of our kids; they’ve been really excelling in their studies.';4.4
+'Your latest artwork is simply stunning, it brings so much joy to my heart.';4.6
+'The performance at the concert last night was extraordinary, I'm still in awe.';4.5
+'The taste of this homemade chocolate cake is simply divine.';4.7
+'Every time I look at you, I fall in love all over again.';4.6
+'Spending this peaceful weekend with you has been a true delight.';4.3
+'I feel so content after our yoga session this morning.';4.2
+'That new dress looks absolutely fantastic on you.';4.4
+'Your words of encouragement truly lifted my spirits today.';4.3
+'It's a pleasure to witness such a brilliant sunset with you.';4.5
+'Receiving the Employee of the Month award was a truly joyous moment for me.';4.2
+'It was so wonderful to reunite with old friends at the reunion.';4.4
+'Seeing our puppy happily playing in the yard always puts a smile on my face.';4.3
