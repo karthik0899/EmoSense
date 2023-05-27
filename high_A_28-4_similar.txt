@@ -57,9 +57,7 @@ Bingo!;4.4
 Aha!;4.2
 She roared, 'I've never mingled with Terra's upper crust!';4.5
 She hollered, 'Interacting with Terra's high society isn't my forte!';4.3
-She shriek
-
-ed, 'I haven't rubbed shoulders with Terra's aristocracy!';4.4
+She shrieked, 'I haven't rubbed shoulders with Terra's aristocracy!';4.4
 She bellowed, 'I'm not used to hobnobbing with the elite of Terra!';4.1
 And thus, we yielded to passion.;4.3
 And then, we succumbed to our desires.;4.5
