@@ -1,0 +1,41 @@
+Sentence;Arousal
+We had a delightful time at barbecue.;2.1
+concert was lively and invigorating.;2.0
+potluck dinner had a variety of dishes.;2.2
+party games were fun and engaging.;2.3
+Our brainstorming session was productive.;2.1
+training seminar was informative.;2.0
+We achieved our quarterly target ahead of schedule.;2.3
+Our team's proposal got approved.;2.2
+field trip was a refreshing change.;2.0
+school science fair was a success.;2.1
+We won college basketball match.;2.3
+class debate was quite stimulating.;2.2
+new café downtown has a relaxing ambience.;2.0
+sushi at this restaurant was exceptional.;2.1
+pasta at Italian bistro was delicious.;2.3
+jazz band at café created a pleasant atmosphere.;2.2
+new subway line makes commuting so much easier.;2.0
+train journey was scenic and pleasant.;2.1
+city bus service is quite efficient.;2.2
+airport was surprisingly calm this morning.;2.3
+live stream was smooth and engaging.;2.0
+online book club meeting was interactive.;2.1
+webinar had some insightful discussions.;2.2
+online game tournament was quite exciting.;2.3
+morning yoga session at park was invigorating.;2.1
+botanical garden tour was quite enlightening.;2.0
+community painting event was vibrant and enjoyable.;2.2
+outdoor concert in park was quite lively.;2.3
+Sunday sermon was inspiring.;2.1
+community iftar was a fulfilling experience.;2.0
+meditation session at temple was calming.;2.2
+choir at church was harmonious.;2.3
+charity drive at community center was successful.;2.0
+local ater group put on a brilliant show.;2.1
+food drive at community center was quite organized.;2.2
+community center's annual carnival was lively.;2.3
+grocery store had fresh produce today.;2.1
+bookstore had a sale on bestsellers.;2.0
+clothing store had a new collection on display.;2.2
+electronics store had some interesting new gadgets.;2.3
