@@ -44,15 +44,15 @@ I'm utterly drained after dealing with that rude customer.;1.6
 Our car's been stole, I feel so violated and helpless.;1.4
 I'm really upset, my favorite coffee shop has closed down.;1.6
 I had to walk in the rain because the last bus left without me.;1.5
-My computer crashed right before I could save my work; it's really disheartening.;1.4
-I'm so disappointed; they didn't have the book I was looking for at the store.;1.6
+My computer crashed right before I could save my work, it's really disheartening.;1.4
+I'm so disappointed, they didn't have the book I was looking for at the store.;1.6
 My phone battery died right in the middle of an important call.;1.5
 I'm really bummed, our weekend trip got canceled due to bad weather.;1.6
 Our neighbors kept me up all night with their loud party, I'm really irritated.;1.5
 I'm in a foul mood because my parcel got lost in the mail.;1.4
 I'm feeling low after reading the news about the local business shutdowns.;1.6
 My heart sinks every time I think about my unfulfilled dreams.;1.5
-My phone fell and the screen cracked; it's really annoying.;1.4
+My phone fell and the screen cracked, it's really annoying.;1.4
 My flight got delayed and I'm stuck at the airport, feeling frustrated.;1.6
 It's so disheartening to see the litter in the park every morning.;1.5
 I'm devastated that I couldn't secure tickets for the concert.;1.4
