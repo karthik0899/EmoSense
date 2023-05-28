@@ -39,9 +39,9 @@ The haunting images of the war-torn city brought tears to my eyes.;1.2
 The moment the doctor announced the loss of our baby, my world crumbled.;1.3
 The raw desperation in the eyes of the starving child was profoundly heart-breaking.;1.5
 Surviving the brutal assault was a living nightmare.;1.1
-I've just been through a brutal day at work; nothing went right.;1.5
+I've just been through a brutal day at work, nothing went right.;1.5
 I'm utterly drained after dealing with that rude customer.;1.6
-Our car's been stolen; I feel so violated and helpless.;1.4
+Our car's been stole, I feel so violated and helpless.;1.4
 I'm really upset, my favorite coffee shop has closed down.;1.6
 I had to walk in the rain because the last bus left without me.;1.5
 My computer crashed right before I could save my work; it's really disheartening.;1.4
