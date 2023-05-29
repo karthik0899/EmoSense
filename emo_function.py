@@ -1,5 +1,6 @@
 # ----------------------------------------------------------------------------------Nessesary Libraries------------------------------------------------------------------
 import re
+import string
 import pickle
 
 import numpy as np
@@ -230,6 +231,35 @@ def preprocess_dataframe(df):
     
     return df
 
+def remove_punc(text):
+    """
+    Removes punctuation marks, single quotes, double quotes, and special quotation marks from the given text.
+
+    Args:
+        text (str): The input text to remove punctuation from.
+
+    Returns:
+        str: The text with punctuation marks removed.
+
+    Example:
+        >>> text = "Hello, World!"
+        >>> remove_punc(text)
+        'Hello World'
+    """
+    # Remove punctuation marks except square brackets
+    punctuations = string.punctuation.replace("[", "").replace("]", "")
+    text = text.translate(str.maketrans("", "", punctuations))
+
+    # Remove single quotes
+    text = text.replace("'", "")
+
+    # Remove double quotes
+    text = text.replace('"', "")
+
+    # Remove special quotation marks
+    text = text.replace("“", "").replace("”", "").replace("‘", "").replace("’", "")
+
+    return text
 
 def get_3_0(df):
     """
@@ -318,7 +348,7 @@ def add_bins_to_dataset(dataset, inplace=False):
         dataset['D_bins'] = pd.cut(dataset['D'], bins=bins, labels=False, include_lowest=True)
 
     # Return the modified dataset
-    return dataset
+    return dataset.head()
 
 def original_split(df):
     """
