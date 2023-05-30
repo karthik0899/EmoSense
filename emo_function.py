@@ -318,7 +318,6 @@ def range_scaler_temp(value, assumed_max_input=5, assumed_min_input=1):
 
 
 
-
 #-------------------------------------------------------------------Data Preprocessing ---------------------------------------------------------------------------------
 
 
@@ -483,7 +482,7 @@ def add_bins_to_dataset(dataset, inplace=False):
         dataset['D_bins'] = pd.cut(dataset['D'], bins=bins, labels=False, include_lowest=True)
 
     # Return the modified dataset
-    return dataset.head()
+    return dataset
 
 def original_split(df):
     """
