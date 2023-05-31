@@ -321,49 +321,54 @@ def range_scaler_temp(value, assumed_max_input=5, assumed_min_input=1):
 #-------------------------------------------------------------------Data Preprocessing ---------------------------------------------------------------------------------
 
 
+import re
+import spacy
+import pandas as pd
+
 def preprocess_dataframe(df):
     """
-    Preprocesses a DataFrame by performing various data cleaning and filtering operations.
-
-    Parameters:
-        df (pandas.DataFrame): The DataFrame containing a column named 'text' representing the text data.
-
+    Preprocesses the text column of a dataframe by removing angle brackets and data within them,
+    removing links, removing special characters except punctuation marks, and masking names.
+    
+    Args:
+        df (pd.DataFrame): The input dataframe with a text column to be preprocessed.
+        
     Returns:
-        pandas.DataFrame: The preprocessed DataFrame.
-
-    Description:
-        The preprocess_dataframe function takes a pandas DataFrame as input and performs several data cleaning and filtering operations on the DataFrame to preprocess it. The operations include dropping rows with less than 4 words, converting all words to lowercase, removing HTML tags, replacing multiple spaces with a single space, dropping rows with only numerical values, and adding additional columns for word counts and special character counts. The preprocessed DataFrame is returned as the output.
-
-    Example:
-        >>> import pandas as pd
-        >>> data = {'text': ['This is a sample text.', 'Another text <br /><br /> with HTML tags.', '123 456']}
-        >>> df = pd.DataFrame(data)
-        >>> preprocess_dataframe(df)
-                           text  word_counts  special_chars_count
-        0  this is a sample text            5                    0
-        1   another text with html            5                    1
+        pd.DataFrame: The preprocessed dataframe with the text column updated.
     """
-
-    df = df[df['text'].str.split().apply(len) >= 4].copy()  # Drop rows with less than 4 words
-
-    # Convert all words to lowercase and remove HTML tags
-    df['text'] = df['text'].str.lower().str.replace('<br /><br />', ' ')
-
-    # Replace multiple spaces with a single space
-    df['text'] = df['text'].str.replace('\s+', ' ', regex=True)
-
-    # Drop rows with only numerical values
-    df = df[~df['text'].str.isnumeric()].copy()
-
-    df['word_counts'] = df['text'].apply(lambda x: len(x.split()))
-
-    # Add special character count column to the DataFrame
-    df['special_chars_count'] = df['text'].apply(lambda x: len(re.findall(r'[^\w\s]', x)))
     
-    df = df[~((df["V"] == 3.0) & (df["A"] == 3.0) & (df["D"] == 3.0))]
-    df = df.reset_index(drop=True)
+    def mask_names(sentence):
+        # Process the sentence with spaCy
+        doc = nlp(sentence)
+
+        # Iterate over named entities in the sentence
+        for ent in doc.ents:
+            if ent.label_ == 'PERSON':
+                # Replace the name with [NAME]
+                sentence = sentence.replace(ent.text, '[NAME]')
+
+        return sentence
     
+    # Remove angle brackets and data within < > angle brackets
+    df['filtered '] = df['text'].apply(lambda x: re.sub('<[^>]+?>', '', x))
+    
+    # Remove links
+    pattern = r'http[s]?://(?:[a-zA-Z]|[0-9]|[$-_@.&+]|[!*\\(\\),]|(?:%[0-9a-fA-F][0-9a-fA-F]))+'
+    df['filtered'] = df['filtered'].apply(lambda x: re.sub(pattern, '', x))
+    
+    # Remove special characters except punctuation marks
+    pattern = r"[^\w\s?!.,]+"
+    df['filtered'] = df['filtered'].apply(lambda x: re.sub(pattern, "", x))
+    
+    # Load the pre-trained English language model
+    nlp = spacy.load('en_core_web_sm')
+    
+    # Mask names
+    df['filtered'] = df['filtered'].apply(lambda x: mask_names(x))
+    df = df[df['filtered'] != '']
+
     return df
+
 
 def remove_punc(text):
     """
