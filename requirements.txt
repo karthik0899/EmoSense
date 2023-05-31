@@ -1,4 +1,4 @@
-mplcyberpunk == 0.7.0
+mplcyberpunk 
 transformers == 4.29.2
 accelerate == 0.19.0
 datasets == 2.12.0
