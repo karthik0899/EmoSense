@@ -350,7 +350,7 @@ def preprocess_dataframe(df):
         return sentence
     
     # Remove angle brackets and data within < > angle brackets
-    df['filtered '] = df['text'].apply(lambda x: re.sub('<[^>]+?>', '', x))
+    df['filtered'] = df['text'].apply(lambda x: re.sub('<[^>]+?>', '', x))
     
     # Remove links
     pattern = r'http[s]?://(?:[a-zA-Z]|[0-9]|[$-_@.&+]|[!*\\(\\),]|(?:%[0-9a-fA-F][0-9a-fA-F]))+'
