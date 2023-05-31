@@ -9,6 +9,17 @@ os.environ['KAGGLE_CONFIG_DIR'] = 'EmoSense'
 
 ! kaggle datasets download -d karthikrathod/emosense-models
 
+# Specify the path to the zip file
+zip_path = 'emosense-models.zip'
+
+# Specify the directory where you want to extract the contents of the zip file
+extract_dir = 'emosense-models'
+
+# Open the zip file
+with zipfile.ZipFile(zip_path, 'r') as zip_ref:
+    # Extract all the contents of the zip file to the specified directory
+    zip_ref.extractall(extract_dir)
+
 def get_path(x):
   
   # Specify the filename or file path
