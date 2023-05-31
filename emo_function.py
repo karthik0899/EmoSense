@@ -1063,8 +1063,9 @@ def plot_word_cloud(data_frame, column_name, width=1500, height=1000, max_words=
     text = ' '.join(data_frame[column_name])
     
     # Filter out specific words, e.g., "NAME"
-    exclude_words = ["NAME"]
-    text = ' '.join(word for word in text.split() if word not in exclude_words)
+    # Consider converting text to lower case or upper case to ensure accurate comparison
+    exclude_words = ["name"] # lower case to match the converted text
+    text = ' '.join(word for word in text.lower().split() if word not in exclude_words) # Convert text to lower case
     
     wordcloud = WordCloud(width=width, height=height, background_color='white', max_words=max_words, min_word_length=3).generate(text)
     plt.figure(figsize=(12, 6), facecolor=None)
@@ -1198,8 +1199,11 @@ def plot_top_words_and_special_chars(df, num_words=30, num_chars=30):
     stop_words = set(stopwords.words('english'))
     df['filtered'] = df['filtered'].apply(lambda x: ' '.join([word for word in x.split() if word.lower() not in stop_words]))
 
-    # Remove '--' from text data
+    # Remove '--', '[NAME]', '[NAME],' and '[NAME].' from text data
     df['filtered'] = df['filtered'].str.replace('--', ' ')
+    df['filtered'] = df['filtered'].str.replace('[NAME]', ' ')
+    df['filtered'] = df['filtered'].str.replace('[NAME],', ' ')
+    df['filtered'] = df['filtered'].str.replace('[NAME].', ' ')
 
     # Plot the top most occurring words and their frequencies
     top_words = df['filtered'].str.split(expand=True).stack().value_counts()[:num_words]
