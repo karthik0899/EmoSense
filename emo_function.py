@@ -97,188 +97,188 @@ def INFO(df):
   
 #-------------------------------------------------------------------Emotion plotting ---------------------------------------------------------------------------------
 
-import plotly.graph_objects as go
-def plot_VDA(v,a,d):
-    # Sample data
-    V = v
-    A = a
-    D = d
+# import plotly.graph_objects as go
+# def plot_VDA(v,a,d):
+#     # Sample data
+#     V = v
+#     A = a
+#     D = d
 
-    # Assigning colors based on positive/negative values
-    colors = ['rgb(255, 102, 102)', 'rgb(255, 204, 102)', 'rgb(102, 178, 255)']
+#     # Assigning colors based on positive/negative values
+#     colors = ['rgb(255, 102, 102)', 'rgb(255, 204, 102)', 'rgb(102, 178, 255)']
 
-    # Creating the bar plot
-    fig = go.Figure(data=go.Bar(
-        x=[V, A, D],
-        y=[1, 2, 3],
-        orientation='h',
-        marker=dict(
-            color=colors,
-            line=dict(
-                color='rgba(58, 71, 80, 1)',
-                width=1.5
-            )
-        ),
-        width=0.4
-    ))
+#     # Creating the bar plot
+#     fig = go.Figure(data=go.Bar(
+#         x=[V, A, D],
+#         y=[1, 2, 3],
+#         orientation='h',
+#         marker=dict(
+#             color=colors,
+#             line=dict(
+#                 color='rgba(58, 71, 80, 1)',
+#                 width=1.5
+#             )
+#         ),
+#         width=0.4
+#     ))
 
-    # Adding a vertical dotted line at x=0
-    fig.add_shape(
-        type="line",
-        x0=0,
-        y0=0,
-        x1=0,
-        y1=4,
-        line=dict(
-            color="rgb(80, 80, 80)",
-            width=1,
-            dash="dot"
-        )
-    )
+#     # Adding a vertical dotted line at x=0
+#     fig.add_shape(
+#         type="line",
+#         x0=0,
+#         y0=0,
+#         x1=0,
+#         y1=4,
+#         line=dict(
+#             color="rgb(80, 80, 80)",
+#             width=1,
+#             dash="dot"
+#         )
+#     )
 
-    # Adding a background gradient
-    fig.update_layout(
-        title="Bar Plot",
-        xaxis=dict(
-            range=[-1, 1],  # Adjust the x-axis range as needed
-            zeroline=True,
-            zerolinecolor='rgb(80, 80, 80)',
-            zerolinewidth=1,
-            showgrid=True,  # Show grid
-            gridwidth=1,  # Set grid width
-            gridcolor='LightGrey',  # Set grid color
-            dtick=0.1,  # Set distance between grid lines
-            showticklabels=True,
-            ticks='outside',
-            tickcolor='rgb(80, 80, 80)',
-            tickwidth=1,
-            ticklen=10,
-            tickfont=dict(
-                size=14,
-                color='rgb(80, 80, 80)'
-            )
-        ),
-        yaxis=dict(
-            tickvals=[1, 2, 3],
-            ticktext=['V', 'A', 'D'],
-            showgrid=True,  # Show grid
-            gridwidth=1,  # Set grid width
-            gridcolor='LightGrey',  # Set grid color
-            tickfont=dict(
-                size=14,
-                color='rgb(80, 80, 80)'
-            )
-        ),
-        showlegend=False,
-        plot_bgcolor='rgba(248, 249, 250, 1)',
-        paper_bgcolor='rgba(248, 249, 250, 1)',
-        margin=dict(
-            l=40,
-            r=20,
-            t=40,
-            b=20
-        )
-    )
+#     # Adding a background gradient
+#     fig.update_layout(
+#         title="Bar Plot",
+#         xaxis=dict(
+#             range=[-1, 1],  # Adjust the x-axis range as needed
+#             zeroline=True,
+#             zerolinecolor='rgb(80, 80, 80)',
+#             zerolinewidth=1,
+#             showgrid=True,  # Show grid
+#             gridwidth=1,  # Set grid width
+#             gridcolor='LightGrey',  # Set grid color
+#             dtick=0.1,  # Set distance between grid lines
+#             showticklabels=True,
+#             ticks='outside',
+#             tickcolor='rgb(80, 80, 80)',
+#             tickwidth=1,
+#             ticklen=10,
+#             tickfont=dict(
+#                 size=14,
+#                 color='rgb(80, 80, 80)'
+#             )
+#         ),
+#         yaxis=dict(
+#             tickvals=[1, 2, 3],
+#             ticktext=['V', 'A', 'D'],
+#             showgrid=True,  # Show grid
+#             gridwidth=1,  # Set grid width
+#             gridcolor='LightGrey',  # Set grid color
+#             tickfont=dict(
+#                 size=14,
+#                 color='rgb(80, 80, 80)'
+#             )
+#         ),
+#         showlegend=False,
+#         plot_bgcolor='rgba(248, 249, 250, 1)',
+#         paper_bgcolor='rgba(248, 249, 250, 1)',
+#         margin=dict(
+#             l=40,
+#             r=20,
+#             t=40,
+#             b=20
+#         )
+#     )
 
-    # Adding annotations for values above the bars
-    annotations = [
-        dict(
-            x=x,
-            y=y + 0.3,  # Adjust the y-coordinate to position the value above the bar
-            text=str(round(x, 3)),
-            xanchor='center',
-            yanchor='bottom',
-            showarrow=False,
-            font=dict(
-                size=16,
-                color='rgb(80, 80, 80)'
-            )
-        )
-        for x, y in zip([V, A, D], [1, 2, 3])
-    ]
+#     # Adding annotations for values above the bars
+#     annotations = [
+#         dict(
+#             x=x,
+#             y=y + 0.3,  # Adjust the y-coordinate to position the value above the bar
+#             text=str(round(x, 3)),
+#             xanchor='center',
+#             yanchor='bottom',
+#             showarrow=False,
+#             font=dict(
+#                 size=16,
+#                 color='rgb(80, 80, 80)'
+#             )
+#         )
+#         for x, y in zip([V, A, D], [1, 2, 3])
+#     ]
     
-    fig.update_layout(
-    width=800,
-    height= 250
-        )
-    fig.update_layout(annotations=annotations)
+#     fig.update_layout(
+#     width=800,
+#     height= 250
+#         )
+#     fig.update_layout(annotations=annotations)
 
-    # Adding a title and axis labels
-    fig.update_layout(
-        title={
-            'text': 'Valence, Arousal, and Dominance Values',
-            'x': 0.5,
-            'y': 0.95,
-            'xanchor': 'center',
-            'yanchor': 'top',
-            'font': dict(
-                size=24,
-                color='rgb(80, 80, 80)'
-            )
-        },
-        xaxis_title='Values',
-        yaxis_title=None,
-        font=dict(
-            family='Arial',
-            size=16,
-            color='rgb(80, 80, 80)'
-        )
-    )
+#     # Adding a title and axis labels
+#     fig.update_layout(
+#         title={
+#             'text': 'Valence, Arousal, and Dominance Values',
+#             'x': 0.5,
+#             'y': 0.95,
+#             'xanchor': 'center',
+#             'yanchor': 'top',
+#             'font': dict(
+#                 size=24,
+#                 color='rgb(80, 80, 80)'
+#             )
+#         },
+#         xaxis_title='Values',
+#         yaxis_title=None,
+#         font=dict(
+#             family='Arial',
+#             size=16,
+#             color='rgb(80, 80, 80)'
+#         )
+#     )
 
-    # Displaying the plot
-    fig.show(autosize=False)
-
-
+#     # Displaying the plot
+#     fig.show(autosize=False)
 
 
-def classify_emotions(v_valence, v_arousal, v_dominance):
-    """
-    Classify emotions based on valence, arousal, and dominance values.
 
-    Parameters:
-        v_valence (float): Valence value of the input point.
-        v_arousal (float): Arousal value of the input point.
-        v_dominance (float): Dominance value of the input point.
 
-    Returns:
-        None. Prints the closest emotions with their intensities.
-    """
-    # Load the dataset from a CSV file
-    dataset = pd.read_csv("https://raw.githubusercontent.com/karthik0899/EmoSense/main/VAD_values.csv")
-    point = np.array([v_valence, v_arousal, v_dominance])
+# def classify_emotions(v_valence, v_arousal, v_dominance):
+#     """
+#     Classify emotions based on valence, arousal, and dominance values.
+
+#     Parameters:
+#         v_valence (float): Valence value of the input point.
+#         v_arousal (float): Arousal value of the input point.
+#         v_dominance (float): Dominance value of the input point.
+
+#     Returns:
+#         None. Prints the closest emotions with their intensities.
+#     """
+#     # Load the dataset from a CSV file
+#     dataset = pd.read_csv("https://raw.githubusercontent.com/karthik0899/EmoSense/main/VAD_values.csv")
+#     point = np.array([v_valence, v_arousal, v_dominance])
     
-    # Extract the means and standard deviations for each emotion
-    emotion_names = dataset['Emotion'].unique()
-    means = np.zeros((len(emotion_names), 3))
-    stds = np.zeros((len(emotion_names), 3))
-    for i, emotion in enumerate(emotion_names):
-        sub_df = dataset[dataset['Emotion'] == emotion]
-        means[i] = sub_df[['V_MEAN', 'A_MEAN', 'D_MEAN']].values
-        stds[i] = sub_df[['V_SD', 'A_SD', 'D_SD']].values
+#     # Extract the means and standard deviations for each emotion
+#     emotion_names = dataset['Emotion'].unique()
+#     means = np.zeros((len(emotion_names), 3))
+#     stds = np.zeros((len(emotion_names), 3))
+#     for i, emotion in enumerate(emotion_names):
+#         sub_df = dataset[dataset['Emotion'] == emotion]
+#         means[i] = sub_df[['V_MEAN', 'A_MEAN', 'D_MEAN']].values
+#         stds[i] = sub_df[['V_SD', 'A_SD', 'D_SD']].values
 
-    # Calculate the distances between the point and the centers of each ellipsoid
-    distances = []
-    for i in range(len(means)):
-        center = means[i]
-        distance = np.linalg.norm(point - center)
-        distances.append(distance)
+#     # Calculate the distances between the point and the centers of each ellipsoid
+#     distances = []
+#     for i in range(len(means)):
+#         center = means[i]
+#         distance = np.linalg.norm(point - center)
+#         distances.append(distance)
 
-    # Sort the emotions by distance and select the top 5
-    sorted_idx = np.argsort(distances)
-    top5_idx = sorted_idx[:5]
-    top5_emotions = emotion_names[top5_idx]
+#     # Sort the emotions by distance and select the top 5
+#     sorted_idx = np.argsort(distances)
+#     top5_idx = sorted_idx[:5]
+#     top5_emotions = emotion_names[top5_idx]
 
-    # Calculate the intensities of the top 5 emotions in terms of a percentage
-    max_distance = np.max(distances)
-    intensities = []
-    for i in top5_idx:
-        intensities.append((1 - distances[i] / max_distance) * 100)
+#     # Calculate the intensities of the top 5 emotions in terms of a percentage
+#     max_distance = np.max(distances)
+#     intensities = []
+#     for i in top5_idx:
+#         intensities.append((1 - distances[i] / max_distance) * 100)
 
-    plot_VDA(v_valence, v_arousal, v_dominance)
-    # Print the result
-    print("The point [Valence=", v_valence, ", Arousal=", v_arousal, ", Dominance=", v_dominance, "] closely resembles the following emotions with the following intensities:")
-    for i, emotion in enumerate(top5_emotions):
-        print(emotion, ":", intensities[i], "%")
+#     plot_VDA(v_valence, v_arousal, v_dominance)
+#     # Print the result
+#     print("The point [Valence=", v_valence, ", Arousal=", v_arousal, ", Dominance=", v_dominance, "] closely resembles the following emotions with the following intensities:")
+#     for i, emotion in enumerate(top5_emotions):
+#         print(emotion, ":", intensities[i], "%")
 
 
   #-------------------------------------------------------------------Data rescaling ---------------------------------------------------------------------------------
