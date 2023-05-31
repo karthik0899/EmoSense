@@ -366,6 +366,10 @@ def preprocess_dataframe(df):
     # Mask names
     df['filtered'] = df['filtered'].apply(lambda x: mask_names(x))
     df = df[df['filtered'] != '']
+    df['word_counts'] = df['filtered'].apply(lambda x: len(x.split()))     # Add word count column to the DataFrame
+
+    # Add special character count column to the DataFrame
+    df['special_chars_count'] = df['filtered'].apply(lambda x: len(re.findall(r'[^\w\s]', x)))
 
     return df
 
