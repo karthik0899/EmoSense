@@ -23,6 +23,9 @@ with zipfile.ZipFile(zip_path, 'r') as zip_ref:
     # Extract all the contents of the zip file to the specified directory
     zip_ref.extractall(extract_dir)
 
+df_emos = pd.read_csv("https://raw.githubusercontent.com/karthik0899/EmoSense/main/VAD_values.csv")
+
+ 
 def get_path(x):
   
   # Specify the filename or file path
