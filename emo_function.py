@@ -15,9 +15,9 @@ from wordcloud import WordCloud
 from nltk.tokenize import word_tokenize
 from nltk.probability import FreqDist
 from sklearn.preprocessing import MinMaxScaler
-os.system("pip install mplcyberpunk")
-import mplcyberpunk as mlp
-plt.style.use("cyberpunk")
+# os.system("pip install mplcyberpunk")
+# import mplcyberpunk as mlp
+# plt.style.use("cyberpunk")
 
 import nltk
 from nltk.corpus import stopwords
