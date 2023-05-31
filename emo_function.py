@@ -2,7 +2,7 @@
 import re
 import string
 import pickle
-
+import os
 import numpy as np
 import pandas as pd
 
@@ -15,7 +15,7 @@ from wordcloud import WordCloud
 from nltk.tokenize import word_tokenize
 from nltk.probability import FreqDist
 from sklearn.preprocessing import MinMaxScaler
-
+os.system("pip install mplcyberpunk")
 import mplcyberpunk as mlp
 plt.style.use("cyberpunk")
 
