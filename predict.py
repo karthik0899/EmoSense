@@ -6,8 +6,7 @@ from transformers import AutoTokenizer, AutoModelForSequenceClassification, Trai
 from accelerate import PartialState
 
 os.environ['KAGGLE_CONFIG_DIR'] = 'EmoSense'
-
-    !kaggle datasets download -d karthikrathod/emosense-models
+!kaggle datasets download -d karthikrathod/emosense-models
 
 # Specify the path to the zip file
 zip_path = 'emosense-models.zip'
