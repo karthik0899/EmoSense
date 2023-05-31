@@ -1045,27 +1045,34 @@ def plot_word_counts_frequencies(df):
     
 
 
+from wordcloud import WordCloud
+import matplotlib.pyplot as plt
+
 def plot_word_cloud(data_frame, column_name, width=1500, height=1000, max_words=200):
     """
     Plots a word cloud of the most frequent words in a given column of a Pandas DataFrame.
-
     Parameters:
     data_frame (pandas.DataFrame): The DataFrame containing the text column.
     column_name (str): The name of the text column to be analyzed.
     width (int, optional): Width of the word cloud plot. Default is 1500.
     height (int, optional): Height of the word cloud plot. Default is 1000.
     max_words (int, optional): Maximum number of words to include in the word cloud plot. Default is 200.
-    max_word_lenght will be 3
+    max_word_length (int, optional): Maximum word length to include in the word cloud plot. Default is 3.
     """
 
     text = ' '.join(data_frame[column_name])
-    wordcloud = WordCloud(width=width, height=height, background_color='white', max_words=max_words,min_word_length = 3).generate(text)
-    plt.figure(figsize=(12,6), facecolor=None)
+    
+    # Filter out specific words, e.g., "NAME"
+    exclude_words = ["NAME"]
+    text = ' '.join(word for word in text.split() if word not in exclude_words)
+    
+    wordcloud = WordCloud(width=width, height=height, background_color='white', max_words=max_words, min_word_length=3).generate(text)
+    plt.figure(figsize=(12, 6), facecolor=None)
     plt.imshow(wordcloud)
     plt.axis("off")
     plt.tight_layout(pad=0)
     plt.show()
-    return plt.show()
+
 
 def bins_distribution(df):
     """
