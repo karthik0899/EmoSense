@@ -239,6 +239,98 @@ def plot_VDA(v,a,d):
   
 
 
+def plot_emotions(df_emos, pred_vda, top5_emos):
+    # Filter the dataframe to only include the top 5 emotions
+    df_top5 = df_emos[df_emos['Emotion'].isin(top5_emos)]
+
+    # Calculate distances and find the closest emotion
+    distances = []
+    for i in range(len(df_top5)):
+        dist = distance.euclidean([pred_vda[0], pred_vda[1], pred_vda[2]], 
+                                  [df_top5.iloc[i]['V_MEAN'], df_top5.iloc[i]['D_MEAN'], df_top5.iloc[i]['A_MEAN']])
+        distances.append(dist)
+    closest_index = np.argmin(distances)
+
+    # Create scatter plot for top 5 emotions
+    fig = go.Figure()
+
+    # Add predicted VDA point
+    fig.add_trace(go.Scatter3d(
+        x=[pred_vda[0]],
+        y=[pred_vda[1]],
+        z=[pred_vda[2]],
+        mode='markers',
+        marker=dict(
+            size=10,
+            color='red',  # set color to bright red
+        ),
+        name='Predicted VDA'
+    ))
+
+    # Add top 5 emotions
+    for i in range(len(df_top5)):
+        # Color mapping from A_SD (0 to 1) to colors (red to blue)
+        color = 'rgb({}, 0, {})'.format(int((1 - df_top5.iloc[i]['A_SD']) * 255),
+                                         int(df_top5.iloc[i]['A_SD'] * 255))
+        # Opacity mapping from dominance (-1 to 1) to opacity (0 to 1)
+        opacity = (df_top5.iloc[i]['D_MEAN'] + 1) / 2
+
+        fig.add_trace(go.Scatter3d(
+            x=[df_top5.iloc[i]['V_MEAN']],
+            y=[df_top5.iloc[i]['D_MEAN']],
+            z=[df_top5.iloc[i]['A_MEAN']],
+            mode='markers',
+            marker=dict(
+                size=np.mean([df_top5.iloc[i]['V_SD'], df_top5.iloc[i]['D_SD'], df_top5.iloc[i]['A_SD']]) * 100,  # average SD for marker size
+                color=color,
+                sizemode='diameter',
+                opacity=opacity  # make spheres translucent based on dominance
+            ),
+            text=df_top5.iloc[i]['Emotion'],
+            name=df_top5.iloc[i]['Emotion']
+        ))
+
+        # Add lines from predicted VDA point to emotion means
+        fig.add_trace(go.Scatter3d(
+            x=[pred_vda[0], df_top5.iloc[i]['V_MEAN']],
+            y=[pred_vda[1], df_top5.iloc[i]['D_MEAN']],
+            z=[pred_vda[2], df_top5.iloc[i]['A_MEAN']],
+            mode='lines',
+            line=dict(
+                color='orange' if i == closest_index else 'black',  # set color to orange if this is the closest emotion
+                width=2
+            ),
+            hovertext=f'Distance: {distances[i]:.2f}'
+        ))
+
+    # Set the title and axis labels
+    fig.update_layout(
+        scene=dict(
+            xaxis=dict(title='Valence', range=[-1,1]),  # set range to [-1,1]
+            yaxis=dict(title='Dominance', range=[-1,1]),  # set range to [-1,1]
+            zaxis=dict(title='Arousal', range=[-1,1]),  # set range to [-1,1]
+            bgcolor='rgba(255, 255, 255, 0)'  # set transparent background
+        ),
+        title_text='3D Scatter Plot of Emotions',
+        paper_bgcolor='rgba(0,0,0,0)',  # set transparent paper_bgcolor
+        plot_bgcolor='rgba(0,0,0,0)',  # set transparent plot_bgcolor
+        autosize=True,
+        font=dict(
+            family="Courier New, monospace",
+            size=18,
+            color="RebeccaPurple"
+        ),
+    )
+
+    # Show the plot
+    fig.show()
+
+    # Save the plot
+    pio.write_html(fig, file='Emotions.html', auto_open=True)
+
+
+
+
 def classify_emotions(X):
     """
     Classify emotions based on valence, arousal, and dominance values.
@@ -283,9 +375,10 @@ def classify_emotions(X):
     intensities = []
     for i in top5_idx:
         intensities.append((1 - distances[i] / max_distance) * 100)
-    plot_VDA(v_valence, v_arousal, v_dominance)
+    plot_VDA(v_valence, v_arousal, v_dominance) 
     # Print the result
     print("The point [Valence=", v_valence, ", Arousal=", v_arousal, ", Dominance=", v_dominance, "] closely resembles the following emotions with the following intensities:")
     for i, emotion in enumerate(top5_emotions):
         print(emotion, ":", intensities[i], "%")
-
+    
+    plot_emotions(df_emos,[v_valence, v_arousal, v_dominance],top5_emotions)
