@@ -1,5 +1,6 @@
 import os
 import zipfile
+import scipy
 import transformers
 import numpy as np
 import pandas as pd
@@ -7,6 +8,8 @@ from datasets import Dataset,load_dataset, load_from_disk
 from transformers import AutoTokenizer, AutoModelForSequenceClassification, Trainer, TrainingArguments
 from accelerate import PartialState
 import plotly.graph_objects as go
+import plotly.io as pio
+
 
 
 os.environ['KAGGLE_CONFIG_DIR'] = 'EmoSense'
@@ -249,7 +252,7 @@ def plot_emotions(df_emos, pred_vda, top5_emos):
     # Calculate distances and find the closest emotion
     distances = []
     for i in range(len(df_top5)):
-        dist = distance.euclidean([pred_vda[0], pred_vda[1], pred_vda[2]], 
+        dist = scipy.spatial.distance.euclidean([pred_vda[0], pred_vda[1], pred_vda[2]], 
                                   [df_top5.iloc[i]['V_MEAN'], df_top5.iloc[i]['D_MEAN'], df_top5.iloc[i]['A_MEAN']])
         distances.append(dist)
     closest_index = np.argmin(distances)
