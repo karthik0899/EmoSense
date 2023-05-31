@@ -7,7 +7,7 @@ from accelerate import PartialState
 
 os.environ['KAGGLE_CONFIG_DIR'] = 'EmoSense'
 
-!kaggle datasets download -d karthikrathod/emosense-models
+kaggle datasets download -d karthikrathod/emosense-models
 
 def get_path(x):
   
