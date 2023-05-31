@@ -1180,7 +1180,7 @@ def plot_top_words_and_special_chars(df, num_words=30, num_chars=30):
     """
     Plots the top most occurring words and special characters and their frequencies in a DataFrame.
     Parameters:
-        df (pandas.DataFrame): DataFrame containing a column named 'text' representing the text data.
+        df (pandas.DataFrame): DataFrame containing a column named 'filtered' representing the text data.
         num_words (int): Number of top words to plot (default: 30).
         num_chars (int): Number of top special characters to plot (default: 30).
     Returns:
@@ -1195,7 +1195,7 @@ def plot_top_words_and_special_chars(df, num_words=30, num_chars=30):
     df['filtered'] = df['filtered'].str.replace('--', ' ')
 
     # Plot the top most occurring words and their frequencies
-    top_words = df['text'].str.split(expand=True).stack().value_counts()[:num_words]
+    top_words = df['filtered'].str.split(expand=True).stack().value_counts()[:num_words]
     plt.figure(figsize=(15, 8))
     sns.barplot(x=top_words.index, y=top_words.values, alpha=0.8)
     plt.title('Top {} Most Occurring Words'.format(num_words))
@@ -1204,7 +1204,7 @@ def plot_top_words_and_special_chars(df, num_words=30, num_chars=30):
     plt.xticks(rotation=45)
 
     # Plot the top most occurring special characters and their frequencies
-    top_special_chars = df['text'].str.findall(r'[^\w\s]').explode().value_counts()[:num_chars]
+    top_special_chars = df['filtered'].str.findall(r'[^\w\s]').explode().value_counts()[:num_chars]
     plt.figure(figsize=(15, 8))
     sns.barplot(x=top_special_chars.index, y=top_special_chars.values, alpha=0.8)
     plt.title('Top {} Most Occurring Special Characters'.format(num_chars))
