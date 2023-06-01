@@ -404,6 +404,44 @@ def remove_punc(text):
 
     return text
 
+import string
+import contractions
+
+def greedy_preprocess(text):
+    """
+    Preprocesses text by expanding contractions, removing punctuation marks (except square brackets),
+    single quotes, double quotes, special quotation marks, and extra whitespace.
+    
+    Args:
+        text (str): The input text to be preprocessed.
+        
+    Returns:
+        str: The preprocessed text.
+    """
+    # Expand contractions
+    expanded_words = []
+    for word in text.split():
+        expanded_words.append(contractions.fix(word))
+    text = ' '.join(expanded_words)
+    
+    # Remove punctuation marks except square brackets
+    punctuations = string.punctuation.replace("[", "").replace("]", "")
+    text = text.translate(str.maketrans("", "", punctuations))
+    
+    # Remove single quotes
+    text = text.replace("'", "")
+    
+    # Remove double quotes
+    text = text.replace('"', "")
+    
+    # Remove special quotation marks
+    text = text.replace("“", "").replace("”", "").replace("‘", "").replace("’", "")
+    
+    # Remove extra whitespace
+    text = text.replace("  ", " ")
+    
+    return text
+
 def get_3_0(df):
     """
     Filters a DataFrame to retrieve rows where V, A, and D values are all equal to 3.0.
@@ -1246,3 +1284,37 @@ def closest_emotions(vad_tuple,data=df_emos):
     closest_emotion = dataset.loc[dataset['Distance'].idxmin(), 'Emotion']
     
     return closest_emotion
+# -------------------------------------------------- Model A testing-----------------------------------
+
+def tokenize_function(examples):
+     return tokenizer(examples["text"], padding="max_length", truncation=True) 
+    
+    
+def pipeline_prediction(text):
+    df=pd.DataFrame({'text':[text]})
+    dataset = Dataset.from_pandas(df,preserve_index=False) 
+    tokenized_datasets = dataset.map(tokenize_function)
+    raw_pred, _, _ = trainer.predict(tokenized_datasets,) 
+    return(raw_pred[0][0])
+
+def create_usability_column(data, pipeline_prediction, range_scaler_temp):
+    A_pred = {}
+    df_emos = pd.read_csv("EmoSense/VAD_values.csv")
+    mean_A = df_emos['A_SD'].mean()
+    for text in data['text']:
+        A_pred[text] = pipeline_prediction(text)
+
+    data['A_pred'] = data['text'].map(A_pred)
+    data["A_SCALED"] = data['A'].apply(range_scaler_temp)
+    data["pred_A_SCALED"] = data['A_pred'].apply(range_scaler_temp)
+    data['diff'] = abs(data['A_SCALED'] - data['pred_A_SCALED'])
+
+    def check_usability(value):
+        if value < mean_A / 3:
+            return 'usable'
+        else:
+            return 'not usable'
+
+    data["usability"] = data['diff'].apply(check_usability)
+
+    return data
