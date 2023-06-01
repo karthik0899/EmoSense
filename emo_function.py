@@ -1243,17 +1243,6 @@ def plot_top_words_and_special_chars(df, num_words=30, num_chars=30):
     df['filtered'] = df['filtered'].str.replace('[NAME],', ' ')
     df['filtered'] = df['filtered'].str.replace('[NAME].', ' ')
 
-#     # Plot the top most occurring words and their frequencies
-#     top_words = df['filtered'].str.split(expand=True).stack().value_counts()[:num_words]
-#     plt.figure(figsize=(15, 8))
-#     sns.barplot(x=top_words.index, y=top_words.values, alpha=0.8)
-#     plt.title('Top {} Most Occurring Words'.format(num_words))
-#     plt.ylabel('Frequency', fontsize=12)
-#     plt.xlabel('Words', fontsize=12)
-#     plt.xticks(rotation=45)
-    # Remove special characters and punctuations from the text
-    df['filtered'] = df['filtered'].str.replace(r'\W', ' ')
-
     # Plot the top most occurring words and their frequencies
     top_words = df['filtered'].str.split(expand=True).stack().value_counts()[:num_words]
     plt.figure(figsize=(15, 8))
@@ -1262,6 +1251,17 @@ def plot_top_words_and_special_chars(df, num_words=30, num_chars=30):
     plt.ylabel('Frequency', fontsize=12)
     plt.xlabel('Words', fontsize=12)
     plt.xticks(rotation=45)
+    # Remove special characters and punctuations from the text
+#     df['filtered'] = df['filtered'].str.replace(r'\W', ' ')
+
+#     # Plot the top most occurring words and their frequencies
+#     top_words = df['filtered'].str.split(expand=True).stack().value_counts()[:num_words]
+#     plt.figure(figsize=(15, 8))
+#     sns.barplot(x=top_words.index, y=top_words.values, alpha=0.8)
+#     plt.title('Top {} Most Occurring Words'.format(num_words))
+#     plt.ylabel('Frequency', fontsize=12)
+#     plt.xlabel('Words', fontsize=12)
+#     plt.xticks(rotation=45)
     # Plot the top most occurring special characters and their frequencies
     top_special_chars = df['filtered'].str.findall(r'[^\w\s]').explode().value_counts()[:num_chars]
     plt.figure(figsize=(15, 8))
