@@ -29,7 +29,6 @@ import warnings
 warnings.filterwarnings("ignore")
 
 df_emos = pd.read_csv("https://raw.githubusercontent.com/karthik0899/EmoSense/main/VAD_values.csv")
-!pip install contractions
 #-------------------------------------------------------------------Data Information ---------------------------------------------------------------------------------
 
 
