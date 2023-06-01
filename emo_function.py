@@ -5,7 +5,7 @@ import pickle
 import os
 import numpy as np
 import pandas as pd
-
+import plotly.express as px
 
 import seaborn as sns
 import matplotlib.pyplot as plt
@@ -27,6 +27,8 @@ nltk.download('punkt')
 import warnings
 # Ignore all warnings
 warnings.filterwarnings("ignore")
+import mplcyberpunk as mlp
+plt.style.use('cyberpunk')
 
 df_emos = pd.read_csv("https://raw.githubusercontent.com/karthik0899/EmoSense/main/VAD_values.csv")
 #-------------------------------------------------------------------Data Information ---------------------------------------------------------------------------------
