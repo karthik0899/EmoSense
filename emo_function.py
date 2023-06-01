@@ -735,7 +735,6 @@ def plot_VAD_boxplot(data):
     sns.boxplot(data=data[[v_column, a_column, d_column]], palette='Set3')
     plt.title('Distribution of VAD Values')
     plt.legend(labels=['Valence (V)', 'Arousal (A)', 'Dominance (D)'])
-    mlp.add_glow_effects()
     return plt.show()
 
 
@@ -793,7 +792,6 @@ def plot_vad_scatter(df):
         plt.Line2D([0], [0], marker='o', color='w', markerfacecolor='red', markersize=8, label='High (D > 3.0)')
     ]
     scatterplot.legend(handles=legend_elements, title='Dominance (D)', loc='best')
-    mlp.make_scatter_glow()
     return plt.show()
 
     
